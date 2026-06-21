@@ -1,0 +1,1347 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="JENNY ART HOUSE 玲瓏藝舍是位於香港大埔的玉器與瓷器精品店，提供典雅玉飾、現代瓷器與家居擺設。">
+  <title>JENNY ART HOUSE 玲瓏藝舍 | Jade & Porcelain</title>
+  <style>
+    :root {
+      --ink: #0b0b0b;
+      --charcoal: #141311;
+      --panel: #1d1a16;
+      --paper: #f7f1e7;
+      --muted: #b9ab97;
+      --gold: #d8bd80;
+      --soft-gold: #f1e5d1;
+      --jade: #74a889;
+      --porcelain: #d9e6ed;
+      --line: rgba(241, 229, 209, .18);
+      --shadow: 0 24px 80px rgba(0, 0, 0, .32);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--paper);
+      background: var(--ink);
+      font-family: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body.intro-active {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .intro {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      place-items: center;
+      min-height: 100svh;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(216, 189, 128, .12), transparent 36%),
+        radial-gradient(circle at 18% 18%, rgba(116, 168, 137, .1), transparent 32%),
+        #0b0b0b;
+      transition: opacity .85s ease, visibility .85s ease;
+    }
+
+    .intro.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-inner {
+      display: grid;
+      place-items: center;
+      width: min(92vw, 520px);
+      text-align: center;
+    }
+
+    .plum-mark {
+      width: clamp(164px, 48vw, 300px);
+      overflow: visible;
+      opacity: 0;
+      transform: scale(.48) rotate(-28deg);
+      animation: bloom 2.5s cubic-bezier(.2, .78, .22, 1) forwards;
+      filter: drop-shadow(0 18px 50px rgba(216, 189, 128, .18));
+    }
+
+    .plum-mark .petal {
+      transform-box: fill-box;
+      transform-origin: center;
+      opacity: 0;
+      animation: petalOpen 1.45s cubic-bezier(.25, .8, .25, 1) forwards;
+    }
+
+    .plum-mark .p2 { animation-delay: .15s; }
+    .plum-mark .p3 { animation-delay: .3s; }
+    .plum-mark .p4 { animation-delay: .45s; }
+    .plum-mark .p5 { animation-delay: .6s; }
+    .plum-mark .branch { stroke-dasharray: 470; stroke-dashoffset: 470; animation: branchDraw 2.1s ease .15s forwards; }
+    .plum-mark .small { opacity: 0; animation: fadeUp .9s ease 1.25s forwards; }
+
+    .intro-title {
+      margin: 22px 0 6px;
+      color: var(--soft-gold);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 9vw, 4.7rem);
+      font-weight: 500;
+      letter-spacing: .1em;
+      line-height: .95;
+      opacity: 0;
+      transform: translateY(14px) scale(.96);
+      animation: titlePop 1s cubic-bezier(.2, .78, .22, 1) 1.5s forwards;
+    }
+
+    .intro-subtitle {
+      margin: 0 0 26px;
+      color: rgba(241, 229, 209, .72);
+      font-size: clamp(.9rem, 3vw, 1.05rem);
+      letter-spacing: .32em;
+      opacity: 0;
+      animation: fadeUp .8s ease 1.8s forwards;
+    }
+
+    .intro .cta {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp .85s ease 2.25s forwards;
+    }
+
+    @keyframes bloom {
+      0% { opacity: 0; transform: scale(.48) rotate(-28deg); }
+      34% { opacity: 1; }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+
+    @keyframes petalOpen {
+      0% { opacity: 0; transform: scale(.2) rotate(-18deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+
+    @keyframes branchDraw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes titlePop {
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      body.intro-active {
+        overflow: auto;
+      }
+
+      .intro {
+        display: none;
+      }
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(241, 229, 209, .12);
+      background: rgba(11, 11, 11, .78);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: min(1120px, calc(100% - 32px));
+      min-height: 68px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: grid;
+      gap: 1px;
+      flex: 0 0 auto;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1rem;
+      letter-spacing: .16em;
+      color: var(--soft-gold);
+      line-height: 1.1;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: .7rem;
+      letter-spacing: .26em;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      color: rgba(247, 241, 231, .78);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .88rem;
+    }
+
+    .nav-links a {
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--soft-gold);
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid rgba(216, 189, 128, .7);
+      border-radius: 999px;
+      color: #17120c;
+      background: linear-gradient(135deg, #f8e9bf, #cda75b);
+      box-shadow: 0 12px 34px rgba(216, 189, 128, .16);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .92rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 44px rgba(216, 189, 128, .24);
+    }
+
+    .cta svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      align-items: center;
+      min-height: calc(100svh - 68px);
+      padding: clamp(44px, 8vw, 88px) 0 clamp(56px, 9vw, 96px);
+      background:
+        linear-gradient(100deg, rgba(11, 11, 11, .98) 0%, rgba(11, 11, 11, .72) 46%, rgba(11, 11, 11, .25) 100%),
+        radial-gradient(circle at 78% 32%, rgba(216, 189, 128, .18), transparent 27%),
+        linear-gradient(145deg, #11100e 0%, #1c1915 52%, #0b0b0b 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 120px;
+      background: linear-gradient(180deg, transparent, var(--ink));
+      pointer-events: none;
+    }
+
+    .hero-wrap {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: clamp(34px, 8vw, 68px);
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 18px;
+      color: var(--soft-gold);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(3.2rem, 16vw, 8.25rem);
+      font-weight: 500;
+      line-height: .82;
+      letter-spacing: 0;
+    }
+
+    .hero-lede {
+      max-width: 590px;
+      margin-bottom: 28px;
+      color: rgba(247, 241, 231, .78);
+      font-size: clamp(1.03rem, 3.6vw, 1.32rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .ghost-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid rgba(247, 241, 231, .2);
+      border-radius: 999px;
+      color: var(--paper);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .92rem;
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    .ghost-link:hover {
+      border-color: rgba(216, 189, 128, .62);
+      background: rgba(216, 189, 128, .08);
+    }
+
+    .hero-art {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      min-height: 320px;
+    }
+
+    .object-tile {
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      border: 1px solid rgba(247, 241, 231, .14);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .04);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .object-tile.large {
+      grid-row: span 2;
+      min-height: 456px;
+    }
+
+    .object-tile::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 28%, rgba(255, 255, 255, .18), transparent 28%),
+        linear-gradient(155deg, rgba(216, 189, 128, .1), rgba(255, 255, 255, .03));
+    }
+
+    .art-label {
+      position: absolute;
+      inset: auto 16px 14px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 10px;
+      color: rgba(247, 241, 231, .88);
+      font-size: .86rem;
+    }
+
+    .art-label span {
+      color: var(--muted);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .72rem;
+    }
+
+    .vase,
+    .jade-disc,
+    .tea-bowl {
+      position: absolute;
+      inset: 8% 8% 18%;
+      margin: auto;
+      width: min(74%, 280px);
+      height: auto;
+    }
+
+    .jade-disc {
+      inset-top: 12%;
+      width: min(70%, 210px);
+    }
+
+    .tea-bowl {
+      inset-top: 18%;
+      width: min(78%, 230px);
+    }
+
+    section {
+      padding: clamp(60px, 11vw, 112px) 0;
+    }
+
+    .section-wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 12px;
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      color: var(--soft-gold);
+      font-size: clamp(2rem, 8vw, 4.3rem);
+      font-weight: 500;
+      line-height: 1.04;
+    }
+
+    .section-head p {
+      margin-bottom: 0;
+      color: rgba(247, 241, 231, .68);
+      font-size: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 330px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02));
+    }
+
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, .72) 100%);
+      pointer-events: none;
+    }
+
+    .gallery-visual {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 36px;
+    }
+
+    .gallery-visual svg {
+      width: min(78%, 310px);
+      height: auto;
+      filter: drop-shadow(0 22px 42px rgba(0, 0, 0, .28));
+    }
+
+    .gallery-copy {
+      position: absolute;
+      inset: auto 18px 18px;
+      z-index: 2;
+    }
+
+    .gallery-copy h3 {
+      margin-bottom: 4px;
+      color: var(--paper);
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+
+    .gallery-copy p {
+      margin-bottom: 16px;
+      color: rgba(247, 241, 231, .72);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .9rem;
+    }
+
+    .mini-cta {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid rgba(216, 189, 128, .54);
+      border-radius: 999px;
+      color: var(--soft-gold);
+      background: rgba(11, 11, 11, .36);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .84rem;
+    }
+
+    .about-band {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .04)),
+        var(--charcoal);
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .about-copy p {
+      max-width: 650px;
+      color: rgba(247, 241, 231, .72);
+      font-size: 1.02rem;
+    }
+
+    .details {
+      display: grid;
+      gap: 12px;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+    }
+
+    .detail-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(247, 241, 231, .12);
+    }
+
+    .detail-row strong {
+      color: var(--soft-gold);
+      font-weight: 600;
+    }
+
+    .detail-row span {
+      color: rgba(247, 241, 231, .7);
+      text-align: right;
+    }
+
+    .contact-panel {
+      display: grid;
+      gap: 22px;
+      padding: clamp(28px, 7vw, 54px);
+      border: 1px solid rgba(216, 189, 128, .22);
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 90% 18%, rgba(116, 168, 137, .14), transparent 28%),
+        linear-gradient(145deg, rgba(216, 189, 128, .09), rgba(255, 255, 255, .03));
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel h2 {
+      max-width: 760px;
+    }
+
+    .contact-panel p {
+      max-width: 650px;
+      color: rgba(247, 241, 231, .7);
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      color: rgba(247, 241, 231, .48);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .82rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      border-top: 1px solid rgba(247, 241, 231, .1);
+      padding-top: 22px;
+    }
+
+    .social-follow {
+      display: grid;
+      gap: 10px;
+      max-width: 520px;
+      color: rgba(247, 241, 231, .68);
+    }
+
+    .social-follow p {
+      margin: 0;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid rgba(216, 189, 128, .34);
+      border-radius: 999px;
+      color: var(--soft-gold);
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    .social-links a:hover {
+      border-color: rgba(216, 189, 128, .72);
+      background: rgba(216, 189, 128, .08);
+    }
+
+    @media (min-width: 760px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .hero-wrap {
+        grid-template-columns: minmax(0, 1.02fr) minmax(350px, .98fr);
+        align-items: center;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery-card:first-child {
+        grid-column: span 2;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr .82fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav {
+        width: min(100% - 24px, 1120px);
+        min-height: 64px;
+      }
+
+      .brand {
+        font-size: .9rem;
+      }
+
+      .site-header .cta {
+        min-height: 40px;
+        padding: 0 12px;
+        font-size: .82rem;
+      }
+
+      .site-header .cta svg {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-art {
+        grid-template-columns: 1fr;
+      }
+
+      .object-tile.large {
+        min-height: 360px;
+      }
+
+      .object-tile {
+        min-height: 270px;
+      }
+
+      .hero-actions,
+      .contact-panel .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .cta,
+      .ghost-link {
+        width: 100%;
+      }
+
+      .detail-row {
+        display: grid;
+        gap: 4px;
+      }
+
+      .detail-row span {
+        text-align: left;
+      }
+    }
+  
+    /* Video-led New Chinese direction */
+    .intro {
+      display: block;
+      padding: 0;
+      overflow: hidden;
+      background: #eee0c2;
+    }
+
+    .intro-inner {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: auto;
+      padding: 28px;
+      background: linear-gradient(180deg, transparent 56%, rgba(26, 17, 10, .5) 100%);
+    }
+
+    .intro-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      background: #eee0c2;
+    }
+
+    .intro-controls {
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+      color: #fffaf0;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeUp .8s ease 1s forwards;
+    }
+
+    .intro-controls p {
+      margin: 0;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .75rem;
+      letter-spacing: .24em;
+    }
+
+    .intro-enter {
+      min-height: 44px;
+      padding: 0 22px;
+      border: 1px solid rgba(255, 250, 240, .66);
+      border-radius: 999px;
+      color: #fffaf0;
+      background: rgba(18, 12, 8, .58);
+      backdrop-filter: blur(10px);
+      font: 600 .88rem "Noto Sans TC", system-ui, sans-serif;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .intro-enter:hover {
+      background: rgba(18, 12, 8, .84);
+      transform: translateY(-2px);
+    }
+
+    .site-header {
+      position: fixed;
+      left: 0;
+      right: 0;
+    }
+
+    .hero {
+      min-height: 100svh;
+      overflow: hidden;
+      padding-top: 110px;
+      background: #eee0c2;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: .82;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(238, 224, 194, .99) 0%, rgba(238, 224, 194, .88) 38%, rgba(238, 224, 194, .28) 72%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      z-index: 2;
+    }
+
+    .hero-wrap {
+      z-index: 3;
+      display: block;
+    }
+
+    .hero-copy {
+      max-width: 660px;
+    }
+
+    .hero h1 {
+      color: #17120e;
+      font-size: clamp(3.3rem, 11vw, 7.4rem);
+      line-height: .84;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-top: 18px;
+      font-size: .27em;
+      line-height: 1.1;
+      letter-spacing: .16em;
+    }
+
+    .hero .eyebrow {
+      color: #982d26;
+    }
+
+    .hero-lede {
+      color: rgba(23, 18, 14, .76);
+    }
+
+    .hero .ghost-link {
+      border-color: rgba(23, 18, 14, .3);
+      color: #17120e;
+    }
+
+    .hero .ghost-link:hover {
+      border-color: rgba(152, 45, 38, .68);
+      background: rgba(152, 45, 38, .08);
+    }
+
+    .object-photo,
+    .gallery-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s cubic-bezier(.2, .78, .22, 1);
+    }
+
+    .gallery-visual {
+      padding: 0;
+    }
+
+    .gallery-card:hover .gallery-visual img {
+      transform: scale(1.035);
+    }
+
+    .gallery-card.tall {
+      min-height: 470px;
+    }
+
+    @media (min-width: 760px) {
+      .gallery.porcelain-grid .gallery-card:last-child {
+        grid-column: span 3;
+        min-height: 440px;
+      }
+    }
+
+    @media (max-width: 759px) {
+      .intro-inner {
+        padding: 22px 16px max(22px, env(safe-area-inset-bottom));
+      }
+
+      .hero {
+        min-height: 100svh;
+        padding-top: 104px;
+      }
+
+      .hero-media video {
+        object-position: 42% center;
+      }
+
+      .hero::before {
+        background: linear-gradient(180deg, rgba(238, 224, 194, .76) 0%, rgba(238, 224, 194, .94) 48%, rgba(238, 224, 194, .9) 76%, rgba(11, 11, 11, .12) 100%);
+      }
+
+      .hero-copy {
+        padding-top: 9vh;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.25rem, 16vw, 5.25rem);
+      }
+
+      .gallery-card,
+      .gallery-card.tall {
+        min-height: 390px;
+      }
+    }
+  
+    @media (prefers-reduced-motion: reduce) {
+      .intro { display: none; }
+      .hero-media video { display: none; }
+    }
+  
+    .hero {
+      background: #eee0c2 url("assets/linglung-hero-poster.jpg") center / cover no-repeat;
+    }
+
+    /* Unified rice-paper, ink and cinnabar theme */
+    body {
+      color: #211a14;
+      background-color: #efe3c7;
+      background-image: url("assets/paper-texture.webp");
+      background-repeat: repeat;
+      background-size: 512px 512px;
+    }
+
+    .site-header {
+      border-bottom-color: rgba(33, 26, 20, .18);
+      background: rgba(239, 227, 199, .9);
+      box-shadow: 0 10px 30px rgba(49, 36, 24, .07);
+    }
+
+    .brand {
+      color: #211a14;
+    }
+
+    .brand span,
+    .nav-links {
+      color: rgba(33, 26, 20, .66);
+    }
+
+    .nav-links a:hover {
+      color: #982d26;
+    }
+
+    .cta {
+      border-color: #7e211c;
+      color: #fffaf0;
+      background: #982d26;
+      box-shadow: 0 12px 30px rgba(90, 26, 21, .18);
+    }
+
+    .cta:hover {
+      background: #7e211c;
+      box-shadow: 0 16px 36px rgba(90, 26, 21, .28);
+    }
+
+    .eyebrow {
+      color: #982d26;
+    }
+
+    #jade,
+    #visit,
+    #contact {
+      background: rgba(239, 227, 199, .9);
+    }
+
+    #jade,
+    #porcelain,
+    #visit,
+    #contact {
+      border-top: 1px solid rgba(33, 26, 20, .12);
+    }
+
+    h2,
+    .section-head h2,
+    .about-copy h2,
+    .contact-panel h2 {
+      color: #211a14;
+    }
+
+    .section-head p,
+    .about-copy p,
+    .contact-panel p {
+      color: rgba(33, 26, 20, .7);
+    }
+
+    .about-band {
+      background: rgba(225, 207, 172, .92);
+    }
+
+    .gallery-card {
+      border-color: rgba(33, 26, 20, .2);
+      box-shadow: 0 18px 46px rgba(48, 34, 22, .12);
+    }
+
+    .details {
+      color: #211a14;
+    }
+
+    .detail-row {
+      border-bottom-color: rgba(33, 26, 20, .18);
+    }
+
+    .detail-row strong {
+      color: #982d26;
+    }
+
+    .detail-row span {
+      color: rgba(33, 26, 20, .72);
+    }
+
+    .contact-panel {
+      border-color: rgba(126, 33, 28, .34);
+      background: rgba(248, 239, 220, .82);
+      box-shadow: 0 26px 70px rgba(56, 40, 26, .12);
+    }
+
+    .contact-panel .ghost-link {
+      border-color: rgba(33, 26, 20, .28);
+      color: #211a14;
+    }
+
+    .contact-panel .ghost-link:hover {
+      border-color: #982d26;
+      background: rgba(152, 45, 38, .07);
+    }
+
+    footer {
+      color: rgba(239, 227, 199, .62);
+      background: #211a14;
+    }
+
+    .footer-wrap {
+      border-top-color: rgba(239, 227, 199, .18);
+    }
+
+    .social-follow {
+      color: rgba(239, 227, 199, .72);
+    }
+
+    .social-links a {
+      border-color: rgba(239, 227, 199, .34);
+      color: #efe3c7;
+    }
+
+    .social-links a:hover {
+      border-color: #efe3c7;
+      background: rgba(239, 227, 199, .08);
+    }
+
+    .footer-wrap {
+      display: grid;
+      grid-template-columns: minmax(220px, .7fr) minmax(380px, 1.3fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .social-follow {
+      max-width: none;
+      gap: 16px;
+      padding: 24px;
+      border: 1px solid rgba(239, 227, 199, .24);
+      border-radius: 8px;
+      background: rgba(239, 227, 199, .06);
+    }
+
+    .social-follow p {
+      color: #efe3c7;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .social-links {
+      gap: 12px;
+    }
+
+    .social-links a {
+      justify-content: center;
+      min-width: 190px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-color: rgba(239, 227, 199, .48);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 759px) {
+      .footer-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .social-follow {
+        padding: 20px;
+      }
+
+      .social-links {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .social-links a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body class="intro-active">
+  <div class="intro" id="intro" aria-label="玲瓏藝舍開場影片">
+    <video class="intro-video" id="introVideo" autoplay muted playsinline preload="auto" poster="assets/linglung-poster.jpg">
+      <source src="assets/linglung-intro.mp4" type="video/mp4">
+    </video>
+    <div class="intro-inner">
+      <div class="intro-controls">
+        <p>JENNY ART HOUSE · 玲瓏藝舍</p>
+        <button class="intro-enter" id="introEnter" type="button">進入網站</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home">JENNY ART HOUSE <span>玲瓏藝舍 · 大埔玉器瓷器</span></a>
+      <div class="nav-links" aria-label="Sections">
+        <a href="#jade">Featured Jade</a>
+        <a href="#porcelain">Modern Porcelain</a>
+        <a href="#visit">Visit</a>
+      </div>
+      <a class="cta js-whatsapp" href="#" data-message="你好！我在 jennyarthouse.com 看到你們的產品，想了解更多細節。">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.05 4.91A9.83 9.83 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.91-7.01Z"/></svg>
+        Contact Us
+      </a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <video id="heroVideo" muted loop playsinline preload="metadata" poster="assets/linglung-hero-poster.jpg">
+          <source src="assets/linglung-intro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">Tai Po · Hong Kong · 玉器瓷器</p>
+          <h1 id="hero-title">玲瓏藝舍<span>JENNY ART HOUSE</span></h1>
+          <p class="hero-lede">玉之溫潤，瓷之澄明。玲瓏藝舍是位於大埔的實體店，精選玉器首飾、傳統瓷器與家居擺設，讓東方器物自然走進現代生活。</p>
+          <div class="hero-actions">
+            <a class="cta js-whatsapp" href="#" data-message="你好！我在 jennyarthouse.com 看到你們的玉器/瓷器，想了解更多細節。">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.05 4.91A9.83 9.83 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.91-7.01Z"/></svg>
+              WhatsApp 查詢
+            </a>
+            <a class="ghost-link" href="#jade">瀏覽精選</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jade">
+      <div class="section-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Featured Jade</p>
+          <h2>玉質溫潤，適合佩戴與收藏。</h2>
+          <p>從日常可配搭的玉戒、玉鐲，到雕工細緻的玉牌，店內可按預算、色澤與用途協助挑選。</p>
+        </div>
+        <div class="gallery jade-grid">
+          <article class="gallery-card tall">
+            <div class="gallery-visual"><img src="assets/jade-rings-collection.webp" alt="多款紫綠翡翠戒指" loading="eager"></div>
+            <div class="gallery-copy">
+              <h3>翡翠戒指</h3>
+              <p>紫翡與翠色相映，古典材質配上現代鑲嵌。</p>
+              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的翡翠戒指。">查詢戒指</a>
+            </div>
+          </article>
+          <article class="gallery-card tall">
+            <div class="gallery-visual"><img src="assets/green-jade-ring.webp" alt="綠色翡翠鑽石戒指" loading="lazy"></div>
+            <div class="gallery-copy">
+              <h3>翠色鑲嵌</h3>
+              <p>鮮明翠色與細緻金工，適合日常珍藏。</p>
+              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想了解玲瓏藝舍的綠色翡翠戒指。">了解款式</a>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="gallery-visual"><img src="assets/jade-dragon-pendant.webp" alt="雕龍翡翠玉牌" loading="lazy"></div>
+            <div class="gallery-copy">
+              <h3>雕刻玉牌</h3>
+              <p>細看種水、色澤與雕工，感受玉石層次。</p>
+              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的雕刻玉牌。">查詢玉牌</a>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="gallery-visual"><img src="assets/jade-bangle.webp" alt="翠綠色翡翠手鐲" loading="lazy"></div>
+            <div class="gallery-copy">
+              <h3>玉鐲珍藏</h3>
+              <p>溫潤圓融，親臨店內可細看實物與試戴。</p>
+              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的翡翠手鐲。">查詢玉鐲</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="porcelain" class="about-band">
+      <div class="section-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Porcelain Collection</p>
+          <h2>瓷器有形，亦有神。</h2>
+          <p>由青花花瓶、粉彩茶具到人物擺設，每件器物都有自己的色彩、神態與陳設方式。</p>
+        </div>
+        <div class="gallery porcelain-grid">
+          <article class="gallery-card tall">
+            <div class="gallery-visual"><img src="assets/blue-white-porcelain-vase.webp" alt="青花花鳥瓷瓶" loading="lazy"></div>
+            <div class="gallery-copy">
+              <h3>青花瓷器</h3>
+              <p>花鳥筆意清雅，適合客廳、玄關與書房陳設。</p>
+              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的青花瓷器。">查詢瓷器</a>
+            </div>
+          </article>
+          <article class="gallery-card tall">
+            <div class="gallery-visual"><img src="assets/floral-porcelain-tea-set.webp" alt="百花彩瓷茶具套裝" loading="lazy"></div>
+            <div class="gallery-copy">
+              <h3>茶具與餐瓷</h3>
+              <p>色彩豐富，可自用、送禮或配成完整套裝。</p>
+              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的彩瓷茶具。">查詢茶具</a>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <div class="gallery-visual"><img src="assets/porcelain-figure-blue.webp" alt="藍袍傳統人物瓷像" loading="lazy"></div>
+            <div class="gallery-copy">
+              <h3>人物瓷像</h3>
+              <p>從衣紋、釉色到神態，展現傳統人物瓷塑之美。</p>
+              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的人物瓷像與擺設。">查詢擺設</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="section-wrap about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">Visit The Shop</p>
+          <h2>歡迎到大埔店親自挑選。</h2>
+          <p>網頁以 WhatsApp 作為主要查詢入口，方便客人在 Instagram、Facebook 或店內 QR code 掃描後，直接詢問款式、價錢與到店時間。</p>
+        </div>
+        <div class="details" aria-label="Shop details">
+          <div class="detail-row"><strong>Location</strong><span>Tai Po, Hong Kong</span></div>
+          <div class="detail-row"><strong>Shop Name</strong><span>玲瓏藝舍 · JENNY ART HOUSE</span></div>
+          <div class="detail-row"><strong>Specialty</strong><span>Jade · Porcelain · Decor</span></div>
+          <div class="detail-row"><strong>Inquiry</strong><span>WhatsApp Direct Message</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-wrap">
+        <div class="contact-panel">
+          <p class="eyebrow">Contact Us</p>
+          <h2>看到喜歡的玉器或瓷器？直接 WhatsApp 查詢。</h2>
+          <p>可傳送截圖、預算或用途，我們會協助介紹合適款式。若需要保留、到店觀看或了解更多細節，也可以直接留言。</p>
+          <div class="hero-actions">
+            <a class="cta js-whatsapp" href="#" data-message="你好！我在 jennyarthouse.com 看到你們的瓷器/玉器，想了解更多細節。">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.05 4.91A9.83 9.83 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.91-7.01Z"/></svg>
+              WhatsApp Contact
+            </a>
+            <a class="ghost-link" href="#home">回到首頁</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-wrap">
+      <div>
+        <span>© <span id="year"></span> JENNY ART HOUSE · 玲瓏藝舍</span><br>
+        <span>jennyarthouse.com</span>
+      </div>
+      <div class="social-follow">
+        <p>如果想了解更多我哋最新嘅動態，請 follow 我哋社交平台。</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="https://www.instagram.com/jenny_art_house/" target="_blank" rel="noopener">Instagram 最新動態</a>
+          <a href="https://www.facebook.com/profile.php?id=100029518591692&amp;locale=zh_HK" target="_blank" rel="noopener">Facebook 專頁</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const whatsappNumber = "85268036381";
+    const intro = document.getElementById("intro");
+    const body = document.body;
+
+    function buildWhatsAppLink(message) {
+      return "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+    }
+
+    document.querySelectorAll(".js-whatsapp").forEach((link) => {
+      link.href = buildWhatsAppLink(link.dataset.message || "你好！我想了解 JENNY ART HOUSE 的產品。");
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const introVideo = document.getElementById("introVideo");
+    const introEnter = document.getElementById("introEnter");
+    const heroVideo = document.getElementById("heroVideo");
+
+    function dismissIntro() {
+      if (intro.classList.contains("is-hidden")) return;
+      intro.classList.add("is-hidden");
+      body.classList.remove("intro-active");
+      introVideo.pause();
+      heroVideo.play().catch(() => {});
+    }
+
+    introEnter.addEventListener("click", dismissIntro);
+    introVideo.addEventListener("ended", dismissIntro);
+    introVideo.addEventListener("error", () => {
+      introVideo.poster = "assets/linglung-poster.jpg";
+    });
+
+    const introPlayback = introVideo.play();
+    if (introPlayback) introPlayback.catch(() => {});
+  </script>
+</body>
+</html>
