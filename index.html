@@ -938,9 +938,9 @@
     body {
       color: #211a14;
       background-color: #efe3c7;
-      background-image: url("assets/paper-texture.webp");
+      background-image: url("assets/rice-paper-texture.webp");
       background-repeat: repeat;
-      background-size: 512px 512px;
+      background-size: 1800px auto;
     }
 
     .site-header {
@@ -981,7 +981,12 @@
     #jade,
     #visit,
     #contact {
-      background: rgba(239, 227, 199, .9);
+      background-color: rgba(239, 227, 199, .9);
+      background-image:
+        linear-gradient(rgba(247, 241, 226, .72), rgba(247, 241, 226, .72)),
+        url("assets/rice-paper-texture.webp");
+      background-repeat: repeat;
+      background-size: auto, 1800px auto;
     }
 
     #jade,
@@ -1005,7 +1010,28 @@
     }
 
     .about-band {
-      background: rgba(225, 207, 172, .92);
+      background-color: rgba(225, 207, 172, .92);
+      background-image:
+        linear-gradient(rgba(225, 207, 172, .64), rgba(225, 207, 172, .64)),
+        url("assets/rice-paper-texture.webp");
+      background-repeat: repeat;
+      background-size: auto, 1800px auto;
+    }
+
+    @media (max-width: 759px) and (orientation: portrait) {
+      .intro-inner {
+        padding: 20px 18px max(24px, env(safe-area-inset-bottom));
+      }
+
+      .intro-video {
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      .intro-controls p {
+        font-size: .68rem;
+        letter-spacing: .16em;
+      }
     }
 
     .gallery-card {
@@ -1127,6 +1153,7 @@
 <body class="intro-active">
   <div class="intro" id="intro" aria-label="玲瓏藝舍開場影片">
     <video class="intro-video" id="introVideo" autoplay muted playsinline preload="auto" poster="assets/linglung-poster.jpg">
+      <source media="(max-width: 759px) and (orientation: portrait)" src="assets/linglung-intro-mobile-257.mp4" type="video/mp4">
       <source src="assets/linglung-intro.mp4" type="video/mp4">
     </video>
     <div class="intro-inner">
@@ -1325,6 +1352,11 @@
     const introVideo = document.getElementById("introVideo");
     const introEnter = document.getElementById("introEnter");
     const heroVideo = document.getElementById("heroVideo");
+    const portraitIntro = window.matchMedia("(max-width: 759px) and (orientation: portrait)").matches;
+
+    if (portraitIntro) {
+      introVideo.poster = "assets/linglung-poster-mobile-257.jpg";
+    }
 
     function dismissIntro() {
       if (intro.classList.contains("is-hidden")) return;
@@ -1337,7 +1369,9 @@
     introEnter.addEventListener("click", dismissIntro);
     introVideo.addEventListener("ended", dismissIntro);
     introVideo.addEventListener("error", () => {
-      introVideo.poster = "assets/linglung-poster.jpg";
+      introVideo.poster = portraitIntro
+        ? "assets/linglung-poster-mobile-257.jpg"
+        : "assets/linglung-poster.jpg";
     });
 
     const introPlayback = introVideo.play();
