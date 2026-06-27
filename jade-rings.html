@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jenny’s Art House 玲瓏藝舍翡翠戒指系列，展示多款翡翠、紫羅蘭及白冰鑲嵌戒指，可直接 WhatsApp 查詢。">
+  <title>翡翠戒指系列 | Jenny’s Art House 玲瓏藝舍</title>
+  <style>
+    :root {
+      --ink: #14110d;
+      --paper: #efe3c7;
+      --paper-light: #f8f0df;
+      --cinnabar: #982d26;
+      --gold: #b78945;
+      --jade: #4f8368;
+      --line: rgba(20, 17, 13, .14);
+      --shadow: 0 22px 60px rgba(23, 18, 14, .16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(239, 227, 199, .88), rgba(239, 227, 199, .94)),
+        url("assets/rice-paper-texture.webp") center / 760px auto repeat;
+      font-family: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(20, 17, 13, .12);
+      background:
+        linear-gradient(180deg, rgba(248, 240, 223, .94), rgba(248, 240, 223, .84)),
+        url("assets/rice-paper-texture.webp") center / 760px auto repeat;
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      width: min(1180px, calc(100% - 28px));
+      min-height: 70px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      font-size: 1.05rem;
+      font-weight: 650;
+      letter-spacing: .02em;
+      line-height: 1.15;
+    }
+
+    .brand span {
+      color: rgba(20, 17, 13, .58);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .74rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .86rem;
+    }
+
+    .nav-link,
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(248, 240, 223, .5);
+    }
+
+    .whatsapp {
+      border-color: rgba(79, 131, 104, .35);
+      color: #f8f0df;
+      background: #315f49;
+      font-weight: 650;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(20, 17, 13, .08);
+      background:
+        linear-gradient(90deg, rgba(248, 240, 223, .98) 0%, rgba(248, 240, 223, .8) 44%, rgba(20, 17, 13, .42) 100%),
+        url("assets/jade-rings-collection.webp") right center / cover no-repeat;
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: clamp(54px, 10vw, 118px) 0 clamp(38px, 7vw, 74px);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--cinnabar);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin-bottom: 18px;
+      font-size: clamp(3rem, 11vw, 7.1rem);
+      font-weight: 500;
+      line-height: .9;
+    }
+
+    .lede {
+      max-width: 610px;
+      margin-bottom: 26px;
+      color: rgba(20, 17, 13, .72);
+      font-size: clamp(1rem, 2.2vw, 1.22rem);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+    }
+
+    .section {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: clamp(34px, 6vw, 70px) 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 500;
+      line-height: 1.12;
+    }
+
+    .note {
+      max-width: 480px;
+      margin: 0;
+      color: rgba(20, 17, 13, .58);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .92rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .82rem;
+    }
+
+    .chip {
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(248, 240, 223, .46);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .product {
+      display: grid;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(248, 240, 223, .78);
+      box-shadow: 0 16px 38px rgba(23, 18, 14, .08);
+    }
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 1 / 1.18;
+      overflow: hidden;
+      background: #17120e;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .product:hover .product-image img {
+      transform: scale(1.035);
+    }
+
+    .badge {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 5px 9px;
+      border: 1px solid rgba(248, 240, 223, .38);
+      border-radius: 999px;
+      color: #f8f0df;
+      background: rgba(20, 17, 13, .64);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .74rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .product-body {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+    }
+
+    .product-title {
+      margin: 0;
+      font-size: clamp(1.05rem, 2.4vw, 1.24rem);
+      font-weight: 600;
+      line-height: 1.28;
+    }
+
+    .price {
+      margin: 0;
+      color: var(--cinnabar);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .desc {
+      margin: 0;
+      color: rgba(20, 17, 13, .66);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .88rem;
+      line-height: 1.55;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      color: rgba(20, 17, 13, .62);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .75rem;
+    }
+
+    .meta span {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(183, 137, 69, .12);
+    }
+
+    .product-actions {
+      display: grid;
+      gap: 8px;
+      margin-top: 2px;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .9rem;
+    }
+
+    .product-actions .whatsapp {
+      width: 100%;
+      min-height: 44px;
+    }
+
+    .visit {
+      display: grid;
+      gap: 18px;
+      padding: clamp(24px, 5vw, 42px);
+      border: 1px solid rgba(20, 17, 13, .12);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(248, 240, 223, .9), rgba(248, 240, 223, .62)),
+        url("assets/rice-paper-texture.webp") center / 760px auto repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .visit h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-weight: 500;
+    }
+
+    .visit p {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: rgba(20, 17, 13, .68);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      color: rgba(20, 17, 13, .52);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .82rem;
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    @media (min-width: 820px) {
+      .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        min-height: 66px;
+      }
+
+      .brand {
+        font-size: .94rem;
+      }
+
+      .brand span {
+        font-size: .68rem;
+      }
+
+      .nav-actions .nav-link {
+        display: none;
+      }
+
+      .nav-actions .whatsapp {
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: .82rem;
+      }
+
+      .hero {
+        background:
+          linear-gradient(180deg, rgba(248, 240, 223, .96) 0%, rgba(248, 240, 223, .92) 52%, rgba(20, 17, 13, .12) 100%),
+          url("assets/jade-rings-collection.webp") center bottom / cover no-repeat;
+      }
+
+      .hero-inner {
+        min-height: 540px;
+        padding-top: 46px;
+      }
+
+      .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-buttons a {
+        width: 100%;
+      }
+
+      .section-head {
+        display: grid;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product {
+        grid-template-columns: 42% 1fr;
+        align-items: stretch;
+      }
+
+      .product-image {
+        aspect-ratio: auto;
+        min-height: 238px;
+      }
+
+      .product-body {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="翡翠戒指分頁導航">
+      <a class="brand" href="index.html#home">Jenny’s Art House<span>玲瓏藝舍 · 大埔懷義街3號</span></a>
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html#jade">返回精選</a>
+        <a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的翡翠戒指系列。">WhatsApp 查詢</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Jade Rings Collection</p>
+        <h1>翡翠戒指系列</h1>
+        <p class="lede">多款翡翠、紫羅蘭與白冰鑲嵌戒指，每件可按實物狀態、尺寸與預算直接查詢。網頁只作款式展示，實際貨況以 WhatsApp 回覆為準。</p>
+        <div class="hero-buttons">
+          <a class="whatsapp js-whatsapp" href="#" data-message="你好！我在翡翠戒指系列頁面看到款式，想了解現貨和價錢。">查詢現貨及價錢</a>
+          <a class="nav-link" href="#products">瀏覽款式</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Available Styles</p>
+          <h2>一件一件慢慢睇。</h2>
+        </div>
+        <p class="note">如想查詢指定款式，可直接按該商品下方 WhatsApp 按鈕，訊息會自動帶入款式名稱。</p>
+      </div>
+
+      <div class="chips" aria-label="款式分類">
+        <span class="chip">翡翠蛋面</span>
+        <span class="chip">紫羅蘭</span>
+        <span class="chip">白冰</span>
+        <span class="chip">鑽石鑲嵌</span>
+      </div>
+
+      <div class="product-grid">
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「高翠圓蛋鑽石戒指」的現貨、尺寸和價錢。">
+            <img src="assets/ring-green-cabochon.webp" alt="高翠圓蛋鑽石戒指" loading="eager">
+            <span class="badge">翡翠蛋面</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">高翠圓蛋鑽石戒指</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">圓潤翠色蛋面，配細緻鑽石圍鑲，適合日常佩戴及收藏。</p>
+            <div class="meta"><span>綠翠</span><span>銀色鑲嵌</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「高翠圓蛋鑽石戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「滿綠三角翡翠戒指」的現貨、尺寸和價錢。">
+            <img src="assets/ring-green-trillion.webp" alt="滿綠三角翡翠戒指" loading="lazy">
+            <span class="badge">特色切形</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">滿綠三角翡翠戒指</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">三角形主石配流線鑲嵌，線條俐落，年輕客人亦容易配搭。</p>
+            <div class="meta"><span>滿綠感</span><span>鑽石點綴</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「滿綠三角翡翠戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「紫羅蘭配陽綠翡翠戒指」的現貨、尺寸和價錢。">
+            <img src="assets/ring-lavender-green.webp" alt="紫羅蘭配陽綠翡翠戒指" loading="lazy">
+            <span class="badge">紫羅蘭</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">紫羅蘭配陽綠翡翠戒指</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">淡紫主石配兩側綠珠，色彩對比明快，整體感覺華麗。</p>
+            <div class="meta"><span>紫翡</span><span>陽綠小珠</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「紫羅蘭配陽綠翡翠戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「紫羅蘭蛋面排戒」的現貨、尺寸和價錢。">
+            <img src="assets/ring-lavender-row.webp" alt="紫羅蘭蛋面排戒" loading="lazy">
+            <span class="badge">排戒</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">紫羅蘭蛋面排戒</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">多粒紫羅蘭蛋面排布，配綠色小石，視覺柔和而有層次。</p>
+            <div class="meta"><span>粉紫</span><span>多石設計</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「紫羅蘭蛋面排戒」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「冰種長方翡翠戒指」的現貨、尺寸和價錢。">
+            <img src="assets/ring-rectangular-jade.webp" alt="冰種長方翡翠戒指" loading="lazy">
+            <span class="badge">冰種感</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">冰種長方翡翠戒指</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">長方主石線條乾淨，翠色通透，配鑽石戒臂更顯利落。</p>
+            <div class="meta"><span>長方戒面</span><span>鑽石戒臂</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「冰種長方翡翠戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「白冰蛋面鑽石戒指」的現貨、尺寸和價錢。">
+            <img src="assets/ring-white-cabochon.webp" alt="白冰蛋面鑽石戒指" loading="lazy">
+            <span class="badge">白冰</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">白冰蛋面鑽石戒指</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">清透白冰蛋面，配細鑽戒托，低調但有光感。</p>
+            <div class="meta"><span>白冰</span><span>簡潔鑲嵌</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「白冰蛋面鑽石戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「翠色馬鞍鑽石戒指」的現貨、尺寸和價錢。">
+            <img src="assets/ring-imperial-saddle.webp" alt="翠色馬鞍鑽石戒指" loading="lazy">
+            <span class="badge">馬鞍款</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">翠色馬鞍鑽石戒指</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">飽滿馬鞍戒面，翠色鮮明，兩側鑽石鋪鑲增加份量感。</p>
+            <div class="meta"><span>飽滿翠色</span><span>份量感</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「翠色馬鞍鑽石戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「皇冠鑽石翡翠戒指」的現貨、尺寸和價錢。">
+            <img src="assets/ring-crown-green.webp" alt="皇冠鑽石翡翠戒指" loading="lazy">
+            <span class="badge">鑽石鑲嵌</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">皇冠鑽石翡翠戒指</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">皇冠式鑽石托架，突出中央翡翠主石，適合喜歡精緻細節的客人。</p>
+            <div class="meta"><span>皇冠托</span><span>立體設計</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「皇冠鑽石翡翠戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="visit">
+        <p class="eyebrow">Visit The Shop</p>
+        <h2>歡迎親臨大埔店睇實物。</h2>
+        <p>地址：大埔懷義街3號。戒指款式、尺寸及貨況會不時更新，如有心水款式，建議先 WhatsApp 查詢及預約到店。</p>
+        <div class="hero-buttons">
+          <a class="whatsapp js-whatsapp" href="#" data-message="你好！我想預約到大埔懷義街3號玲瓏藝舍睇翡翠戒指。">預約到店睇戒指</a>
+          <a class="nav-link" href="index.html#home">返回首頁</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jenny’s Art House · 玲瓏藝舍</span><br>
+      <span>大埔懷義街3號 · WhatsApp 6803 6381</span>
+    </div>
+  </footer>
+
+  <script>
+    const whatsappNumber = "85268036381";
+
+    function buildWhatsAppLink(message) {
+      return "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+    }
+
+    document.querySelectorAll(".js-whatsapp").forEach((link) => {
+      link.href = buildWhatsAppLink(link.dataset.message || "你好！我想查詢 Jenny’s Art House 玲瓏藝舍的翡翠戒指。");
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
