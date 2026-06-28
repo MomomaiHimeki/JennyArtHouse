@@ -228,6 +228,42 @@
       color: var(--soft-gold);
     }
 
+    .category-shortcuts {
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      z-index: 19;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 8px max(16px, calc((100vw - 1120px) / 2));
+      border-bottom: 1px solid rgba(241, 229, 209, .12);
+      background: rgba(11, 11, 11, .62);
+      backdrop-filter: blur(14px);
+      scrollbar-width: none;
+    }
+
+    .category-shortcuts::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-shortcuts a {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid rgba(216, 189, 128, .28);
+      border-radius: 999px;
+      color: var(--soft-gold);
+      background: rgba(247, 241, 231, .08);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .78rem;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
     .cta {
       display: inline-flex;
       align-items: center;
@@ -796,7 +832,7 @@
     .hero {
       min-height: 100svh;
       overflow: hidden;
-      padding-top: 110px;
+      padding-top: 150px;
       background: #eee0c2;
     }
 
@@ -902,7 +938,7 @@
 
       .hero {
         min-height: 100svh;
-        padding-top: 104px;
+        padding-top: 144px;
       }
 
       .hero-media video {
@@ -962,6 +998,20 @@
 
     .nav-links a:hover {
       color: #982d26;
+    }
+
+    .category-shortcuts {
+      border-bottom-color: rgba(33, 26, 20, .14);
+      background:
+        linear-gradient(180deg, rgba(239, 227, 199, .94), rgba(239, 227, 199, .84)),
+        url("assets/rice-paper-texture.webp") center / 1200px auto repeat;
+      box-shadow: 0 10px 30px rgba(49, 36, 24, .06);
+    }
+
+    .category-shortcuts a {
+      border-color: rgba(126, 33, 28, .2);
+      color: #7e211c;
+      background: rgba(255, 250, 240, .56);
     }
 
     .cta {
@@ -1172,6 +1222,8 @@
       <div class="nav-links" aria-label="Sections">
         <a href="#jade">Featured Jade</a>
         <a href="jade-rings.html">Jade Rings</a>
+        <a href="jade-pendants.html">Jade Pendants</a>
+        <a href="blue-white-porcelain.html">Blue & White</a>
         <a href="#porcelain">Modern Porcelain</a>
         <a href="#visit">Visit</a>
       </div>
@@ -1180,6 +1232,11 @@
         Contact Us
       </a>
     </nav>
+    <div class="category-shortcuts" aria-label="商品分類捷徑">
+      <a href="jade-rings.html">翡翠戒指</a>
+      <a href="jade-pendants.html">雕刻玉牌</a>
+      <a href="blue-white-porcelain.html">青花瓷器</a>
+    </div>
   </header>
 
   <main id="home">
@@ -1230,11 +1287,11 @@
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-visual"><img src="assets/jade-dragon-pendant.webp" alt="雕龍翡翠玉牌" loading="lazy"></div>
+            <a class="gallery-visual" href="jade-pendants.html" aria-label="瀏覽雕刻玉牌系列"><img src="assets/jade-dragon-pendant.webp" alt="雕龍翡翠玉牌" loading="lazy"></a>
             <div class="gallery-copy">
               <h3>雕刻玉牌</h3>
               <p>細看種水、色澤與雕工，感受玉石層次。</p>
-              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的雕刻玉牌。">查詢玉牌</a>
+              <a class="mini-cta" href="jade-pendants.html">瀏覽玉牌系列</a>
             </div>
           </article>
           <article class="gallery-card">
@@ -1258,11 +1315,11 @@
         </div>
         <div class="gallery porcelain-grid">
           <article class="gallery-card tall">
-            <div class="gallery-visual"><img src="assets/blue-white-porcelain-vase.webp" alt="青花花鳥瓷瓶" loading="lazy"></div>
+            <a class="gallery-visual" href="blue-white-porcelain.html" aria-label="瀏覽青花瓷器系列"><img src="assets/blue-white-porcelain-vase.webp" alt="青花花鳥瓷瓶" loading="lazy"></a>
             <div class="gallery-copy">
               <h3>青花瓷器</h3>
               <p>花鳥筆意清雅，適合客廳、玄關與書房陳設。</p>
-              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的青花瓷器。">查詢瓷器</a>
+              <a class="mini-cta" href="blue-white-porcelain.html">瀏覽青花瓷器</a>
             </div>
           </article>
           <article class="gallery-card tall">
