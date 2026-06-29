@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jenny’s Art House 玲瓏藝舍翡翠吊墜系列，展示翡翠吊墜、耳環及配套飾品，可直接 WhatsApp 查詢。">
+  <title>翡翠吊墜系列 | Jenny’s Art House 玲瓏藝舍</title>
+  <style>
+    :root {
+      --ink: #14110d;
+      --paper: #efe3c7;
+      --paper-light: #f8f0df;
+      --cinnabar: #982d26;
+      --jade: #315f49;
+      --line: rgba(20, 17, 13, .14);
+      --shadow: 0 22px 60px rgba(23, 18, 14, .16);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(239, 227, 199, .9), rgba(239, 227, 199, .95)),
+        url("assets/rice-paper-texture.webp") center / 760px auto repeat;
+      font-family: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(20, 17, 13, .12);
+      background:
+        linear-gradient(180deg, rgba(248, 240, 223, .96), rgba(248, 240, 223, .86)),
+        url("assets/rice-paper-texture.webp") center / 760px auto repeat;
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      width: min(1180px, calc(100% - 28px));
+      min-height: 70px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      font-size: 1.05rem;
+      font-weight: 650;
+      letter-spacing: .02em;
+      line-height: 1.15;
+    }
+
+    .brand span {
+      color: rgba(20, 17, 13, .58);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .74rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+    }
+
+    .nav-actions,
+    .category-shortcuts,
+    .hero-buttons,
+    .product-actions {
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      font-size: .86rem;
+    }
+
+    .nav-link,
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(248, 240, 223, .5);
+      white-space: nowrap;
+    }
+
+    .whatsapp {
+      border-color: rgba(49, 95, 73, .35);
+      color: #f8f0df;
+      background: var(--jade);
+      font-weight: 650;
+    }
+
+    .category-shortcuts {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 0 0 10px;
+      scrollbar-width: none;
+    }
+
+    .category-shortcuts::-webkit-scrollbar { display: none; }
+
+    .category-shortcuts a {
+      flex: 0 0 auto;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid rgba(126, 33, 28, .2);
+      border-radius: 999px;
+      color: #7e211c;
+      background: rgba(255, 250, 240, .56);
+      font-size: .78rem;
+      font-weight: 650;
+    }
+
+    .category-shortcuts a[aria-current="page"] {
+      color: #fffaf0;
+      background: var(--cinnabar);
+    }
+
+    .hero {
+      overflow: hidden;
+      border-bottom: 1px solid rgba(20, 17, 13, .08);
+      background:
+        linear-gradient(90deg, rgba(248, 240, 223, .98) 0%, rgba(248, 240, 223, .82) 46%, rgba(20, 17, 13, .42) 100%),
+        url("assets/jade-pendant-display.jpeg") right center / cover no-repeat;
+    }
+
+    .hero-inner,
+    .section,
+    .footer-inner {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      padding: clamp(54px, 10vw, 112px) 0 clamp(38px, 7vw, 70px);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--cinnabar);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 680px;
+      margin-bottom: 18px;
+      font-size: clamp(3rem, 11vw, 7rem);
+      font-weight: 500;
+      line-height: .9;
+    }
+
+    .lede {
+      max-width: 610px;
+      margin-bottom: 26px;
+      color: rgba(20, 17, 13, .72);
+      font-size: clamp(1rem, 2.2vw, 1.22rem);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .section {
+      padding: clamp(34px, 6vw, 70px) 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 500;
+      line-height: 1.12;
+    }
+
+    .note {
+      max-width: 500px;
+      margin: 0;
+      color: rgba(20, 17, 13, .58);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .92rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .product {
+      display: grid;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(248, 240, 223, .78);
+      box-shadow: 0 16px 38px rgba(23, 18, 14, .08);
+    }
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 1 / 1.18;
+      overflow: hidden;
+      background: #17120e;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .product:hover .product-image img { transform: scale(1.035); }
+
+    .badge {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 5px 9px;
+      border: 1px solid rgba(248, 240, 223, .38);
+      border-radius: 999px;
+      color: #f8f0df;
+      background: rgba(20, 17, 13, .64);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .74rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .product-body {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+    }
+
+    .product-title {
+      margin: 0;
+      font-size: clamp(1.05rem, 2.4vw, 1.24rem);
+      font-weight: 600;
+      line-height: 1.28;
+    }
+
+    .price {
+      margin: 0;
+      color: var(--cinnabar);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .desc {
+      margin: 0;
+      color: rgba(20, 17, 13, .66);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .88rem;
+      line-height: 1.55;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      color: rgba(20, 17, 13, .62);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .75rem;
+    }
+
+    .meta span {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(183, 137, 69, .12);
+    }
+
+    .product-actions {
+      display: grid;
+      gap: 8px;
+      margin-top: 2px;
+      font-size: .9rem;
+    }
+
+    .product-actions .whatsapp {
+      width: 100%;
+      min-height: 44px;
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      color: rgba(20, 17, 13, .52);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .82rem;
+    }
+
+    .footer-inner {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    @media (min-width: 820px) {
+      .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .nav { min-height: 64px; }
+      .brand { font-size: .94rem; }
+      .brand span { font-size: .68rem; }
+      .nav-actions .nav-link { display: none; }
+      .nav-actions .whatsapp {
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: .82rem;
+      }
+      .hero {
+        background:
+          linear-gradient(180deg, rgba(248, 240, 223, .96) 0%, rgba(248, 240, 223, .92) 54%, rgba(20, 17, 13, .16) 100%),
+          url("assets/jade-pendant-display.jpeg") center bottom / cover no-repeat;
+      }
+      .hero-inner {
+        min-height: 520px;
+        padding-top: 42px;
+      }
+      .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .hero-buttons a { width: 100%; }
+      .section-head { display: grid; }
+      .product-grid { grid-template-columns: 1fr; }
+      .product {
+        grid-template-columns: 42% 1fr;
+        align-items: stretch;
+      }
+      .product-image {
+        aspect-ratio: auto;
+        min-height: 238px;
+      }
+      .product-body { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="分類頁導航">
+      <a class="brand" href="index.html#home">Jenny’s Art House<span>玲瓏藝舍 · 大埔懷義街3號</span></a>
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html#jade">返回精選</a>
+        <a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的翡翠吊墜系列。">WhatsApp 查詢</a>
+      </div>
+    </nav>
+    <div class="category-shortcuts" aria-label="商品分類捷徑">
+      <a href="jade-necklaces.html" aria-current="page">翡翠吊墜</a>
+      <a href="jade-rings.html">翡翠戒指</a>
+      <a href="jade-pendants.html">雕刻玉牌</a>
+      <a href="blue-white-porcelain.html">青花瓷器</a>
+      <a href="porcelain-figures.html">人物瓷像</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Jade Pendant Collection</p>
+        <h1>翡翠吊墜系列</h1>
+        <p class="lede">翡翠吊墜、耳環及配套飾品可按色澤、鑲嵌工藝與佩戴場合挑選。網頁只作款式展示，實際貨況、尺寸及價錢以 WhatsApp 回覆為準。</p>
+        <div class="hero-buttons">
+          <a class="whatsapp js-whatsapp" href="#" data-message="你好！我在翡翠吊墜系列頁面看到款式，想了解現貨和價錢。">查詢現貨及價錢</a>
+          <a class="nav-link" href="#products">瀏覽款式</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Available Styles</p>
+          <h2>吊墜、耳環與配套慢慢揀。</h2>
+        </div>
+        <p class="note">撳商品相或下方 WhatsApp 按鈕，訊息會自動帶入指定款式，方便直接查詢。</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「翠綠水滴翡翠吊墜」的現貨、尺寸和價錢。">
+            <img src="assets/jade-teardrop-pendant.jpeg" alt="翠綠水滴翡翠吊墜" loading="lazy">
+            <span class="badge">水滴吊墜</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">翠綠水滴翡翠吊墜</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">鮮明翠色水滴造型，配鑲嵌細節，適合晚宴或日常精緻配搭。</p>
+            <div class="meta"><span>滿綠感</span><span>水滴造型</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「翠綠水滴翡翠吊墜」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「雕花葫蘆翡翠吊墜」的現貨、尺寸和價錢。">
+            <img src="assets/jade-carved-gourd-pendant.jpeg" alt="雕花葫蘆翡翠吊墜" loading="lazy">
+            <span class="badge">雕花吊墜</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">雕花葫蘆翡翠吊墜</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">翠色飽滿，表面帶細緻雕花紋理，銀色鑲邊令輪廓更突出。</p>
+            <div class="meta"><span>葫蘆造型</span><span>雕花鑲嵌</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「雕花葫蘆翡翠吊墜」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Jenny’s Art House · 玲瓏藝舍</span><br>
+      <span>大埔懷義街3號 · WhatsApp 6803 6381</span>
+    </div>
+  </footer>
+
+  <script>
+    const whatsappNumber = "85268036381";
+
+    function buildWhatsAppLink(message) {
+      return "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+    }
+
+    document.querySelectorAll(".js-whatsapp").forEach((link) => {
+      link.href = buildWhatsAppLink(link.dataset.message || "你好！我想查詢 Jenny’s Art House 玲瓏藝舍的翡翠吊墜。");
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
