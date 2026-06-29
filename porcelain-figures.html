@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jenny’s Art House 玲瓏藝舍青花瓷器系列，展示青花瓷瓶與傳統瓷器，可直接 WhatsApp 查詢。">
-  <title>青花瓷器系列 | Jenny’s Art House 玲瓏藝舍</title>
+  <meta name="description" content="Jenny’s Art House 玲瓏藝舍人物瓷像系列，展示仕女、童子、文士、陶瓷人物擺設及福祿壽瓷像組，可直接 WhatsApp 查詢。">
+  <title>人物瓷像系列 | Jenny’s Art House 玲瓏藝舍</title>
   <style>
     :root {
       --ink: #14110d;
@@ -23,11 +23,12 @@
       margin: 0;
       color: var(--ink);
       background:
-        linear-gradient(180deg, rgba(239, 227, 199, .9), rgba(239, 227, 199, .95)),
+        linear-gradient(180deg, rgba(239, 227, 199, .88), rgba(239, 227, 199, .94)),
         url("assets/rice-paper-texture.webp") center / 760px auto repeat;
       font-family: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -39,7 +40,7 @@
       z-index: 10;
       border-bottom: 1px solid rgba(20, 17, 13, .12);
       background:
-        linear-gradient(180deg, rgba(248, 240, 223, .96), rgba(248, 240, 223, .86)),
+        linear-gradient(180deg, rgba(248, 240, 223, .94), rgba(248, 240, 223, .84)),
         url("assets/rice-paper-texture.webp") center / 760px auto repeat;
       backdrop-filter: blur(16px);
     }
@@ -129,19 +130,21 @@
       background: rgba(255, 250, 240, .56);
       font-size: .78rem;
       font-weight: 650;
+      white-space: nowrap;
     }
 
     .category-shortcuts a[aria-current="page"] {
-      color: #fffaf0;
+      color: #f8f0df;
       background: var(--blue);
     }
 
     .hero {
+      position: relative;
       overflow: hidden;
       border-bottom: 1px solid rgba(20, 17, 13, .08);
       background:
-        linear-gradient(90deg, rgba(248, 240, 223, .98) 0%, rgba(248, 240, 223, .82) 46%, rgba(20, 17, 13, .38) 100%),
-        url("assets/porcelain-blue-white-vase.webp") right center / cover no-repeat;
+        linear-gradient(90deg, rgba(248, 240, 223, .98) 0%, rgba(248, 240, 223, .72) 45%, rgba(20, 17, 13, .46) 100%),
+        url("assets/porcelain-figure-blue.webp") right center / cover no-repeat;
     }
 
     .hero-inner,
@@ -329,7 +332,7 @@
     }
 
     @media (min-width: 820px) {
-      .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (max-width: 620px) {
@@ -344,8 +347,8 @@
       }
       .hero {
         background:
-          linear-gradient(180deg, rgba(248, 240, 223, .96) 0%, rgba(248, 240, 223, .92) 54%, rgba(20, 17, 13, .16) 100%),
-          url("assets/porcelain-blue-white-vase.webp") center bottom / cover no-repeat;
+          linear-gradient(180deg, rgba(248, 240, 223, .96) 0%, rgba(248, 240, 223, .9) 52%, rgba(20, 17, 13, .18) 100%),
+          url("assets/porcelain-figure-blue.webp") center bottom / cover no-repeat;
       }
       .hero-inner {
         min-height: 520px;
@@ -372,30 +375,30 @@
 </head>
 <body>
   <header class="topbar">
-    <nav class="nav" aria-label="分類頁導航">
+    <nav class="nav" aria-label="主導覽">
       <a class="brand" href="index.html#home">Jenny’s Art House<span>玲瓏藝舍 · 大埔懷義街3號</span></a>
       <div class="nav-actions">
-        <a class="nav-link" href="index.html#porcelain">返回精選</a>
-        <a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的青花瓷器系列。">WhatsApp 查詢</a>
+        <a class="nav-link" href="index.html#porcelain">返回主頁</a>
+        <a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢 Jenny’s Art House 玲瓏藝舍的人物瓷像系列。">WhatsApp 查詢</a>
       </div>
     </nav>
-    <div class="category-shortcuts" aria-label="商品分類捷徑">
+    <div class="category-shortcuts" aria-label="商品分類">
       <a href="jade-rings.html">翡翠戒指</a>
       <a href="jade-pendants.html">雕刻玉牌</a>
-      <a href="blue-white-porcelain.html" aria-current="page">青花瓷器</a>
-      <a href="porcelain-figures.html">人物瓷像</a>
+      <a href="blue-white-porcelain.html">青花瓷器</a>
+      <a href="porcelain-figures.html" aria-current="page">人物瓷像</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="hero-inner">
-        <p class="eyebrow">Blue & White Porcelain</p>
-        <h1>青花瓷器系列</h1>
-        <p class="lede">青花瓷器線條清雅，適合家居陳設、收藏或送禮。網頁只作款式展示，實際貨況、尺寸及價錢以 WhatsApp 回覆為準。</p>
+        <p class="eyebrow">Porcelain Figures</p>
+        <h1>人物瓷像系列</h1>
+        <p class="lede">從衣紋、釉色到神態，展示傳統人物瓷塑之美。適合家居陳設、茶席擺件及收藏送禮。</p>
         <div class="hero-buttons">
-          <a class="whatsapp js-whatsapp" href="#" data-message="你好！我在青花瓷器系列頁面看到款式，想了解現貨和價錢。">查詢現貨及價錢</a>
-          <a class="nav-link" href="#products">瀏覽款式</a>
+          <a class="whatsapp js-whatsapp" href="#" data-message="你好！我想了解人物瓷像系列的現貨和價錢。">查詢人物瓷像</a>
+          <a class="nav-link" href="#products">瀏覽產品</a>
         </div>
       </div>
     </section>
@@ -404,26 +407,95 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">Available Styles</p>
-          <h2>青花瓷器陳設。</h2>
+          <h2>人物瓷像與擺設。</h2>
         </div>
-        <p class="note">撳商品相或下方 WhatsApp 按鈕，訊息會自動帶入指定款式，方便直接查詢。</p>
+        <p class="note">每件款式均可 WhatsApp 查詢現貨、尺寸及價錢。網頁只作展示，實際貨況以回覆為準。</p>
       </div>
 
       <div class="product-grid">
         <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「青花花鳥瓷瓶」的現貨、尺寸和價錢。">
-            <img src="assets/porcelain-blue-white-vase.webp" alt="青花花鳥瓷瓶" loading="eager">
-            <span class="badge">青花瓷瓶</span>
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「仕女持瓶人物瓷像」的現貨、尺寸和價錢。">
+            <img src="assets/porcelain-lady-vase.jpeg" alt="仕女持瓶人物瓷像" loading="eager">
+            <span class="badge">仕女瓷像</span>
           </a>
           <div class="product-body">
-            <h3 class="product-title">青花花鳥瓷瓶</h3>
+            <h3 class="product-title">仕女持瓶人物瓷像</h3>
             <p class="price">HK$ 請查詢</p>
-            <p class="desc">花鳥筆意清雅，瓶身比例端正，適合玄關、客廳或書房陳設。</p>
-            <div class="meta"><span>青花</span><span>花鳥</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「青花花鳥瓷瓶」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+            <p class="desc">人物神態溫婉，衣紋與竹葉紋飾細緻，適合作為中式陳設或收藏擺件。</p>
+            <div class="meta"><span>仕女</span><span>彩繪瓷像</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「仕女持瓶人物瓷像」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
           </div>
         </article>
 
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「青花童子人物瓷像」的現貨、尺寸和價錢。">
+            <img src="assets/porcelain-child-figure.jpeg" alt="青花童子人物瓷像" loading="lazy">
+            <span class="badge">童子瓷像</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">青花童子人物瓷像</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">童子造型活潑自然，青花紋飾清雅，適合喜歡傳統人物題材的客人。</p>
+            <div class="meta"><span>青花</span><span>童子</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「青花童子人物瓷像」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「文士伴鵝人物瓷像」的現貨、尺寸和價錢。">
+            <img src="assets/porcelain-scholar-goose.jpeg" alt="文士伴鵝人物瓷像" loading="lazy">
+            <span class="badge">文士瓷像</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">文士伴鵝人物瓷像</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">淡青釉色配花紋長袍，伴鵝題材清雅，整體感覺從容雅致。</p>
+            <div class="meta"><span>文士</span><span>伴鵝題材</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「文士伴鵝人物瓷像」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「陶瓷臥眠人物擺設」的現貨、尺寸和價錢。">
+            <img src="assets/porcelain-sleeping-figure.webp" alt="陶瓷臥眠人物擺設" loading="lazy">
+            <span class="badge">人物擺設</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">陶瓷臥眠人物擺設</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">人物姿態自然，色彩溫潤，適合作為茶席或案頭擺件。</p>
+            <div class="meta"><span>陶瓷</span><span>擺設</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「陶瓷臥眠人物擺設」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「彩釉文官人物瓷像」的現貨、尺寸和價錢。">
+            <img src="assets/porcelain-official-figure.webp" alt="彩釉文官人物瓷像" loading="lazy">
+            <span class="badge">彩釉瓷像</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">彩釉文官人物瓷像</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">衣紋與釉彩細節豐富，適合喜歡傳統人物題材的客人。</p>
+            <div class="meta"><span>人物瓷像</span><span>彩釉</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「彩釉文官人物瓷像」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「福祿壽人物瓷像組」的現貨、尺寸和價錢。">
+            <img src="assets/porcelain-three-figures.webp" alt="福祿壽人物瓷像組" loading="lazy">
+            <span class="badge">成組擺設</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">福祿壽人物瓷像組</h3>
+            <p class="price">HK$ 請查詢</p>
+            <p class="desc">三尊人物成組陳列，色彩明亮，傳統寓意鮮明。</p>
+            <div class="meta"><span>瓷像組</span><span>傳統題材</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「福祿壽人物瓷像組」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -443,7 +515,7 @@
     }
 
     document.querySelectorAll(".js-whatsapp").forEach((link) => {
-      link.href = buildWhatsAppLink(link.dataset.message || "你好！我想查詢 Jenny’s Art House 玲瓏藝舍的青花瓷器。");
+      link.href = buildWhatsAppLink(link.dataset.message || "你好！我想查詢 Jenny’s Art House 玲瓏藝舍的產品。");
       link.target = "_blank";
       link.rel = "noopener";
     });

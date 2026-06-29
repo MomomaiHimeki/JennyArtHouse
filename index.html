@@ -586,6 +586,11 @@
       font-family: "Noto Sans TC", system-ui, sans-serif;
     }
 
+    .visit-side {
+      display: grid;
+      gap: 18px;
+    }
+
     .detail-row {
       display: flex;
       align-items: baseline;
@@ -603,6 +608,28 @@
     .detail-row span {
       color: rgba(247, 241, 231, .7);
       text-align: right;
+    }
+
+    .shopfront-card {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .shopfront-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center top;
+      border: 1px solid rgba(216, 189, 128, .24);
+      border-radius: 8px;
+      box-shadow: 0 20px 46px rgba(0, 0, 0, .22);
+    }
+
+    .shopfront-card figcaption {
+      color: rgba(247, 241, 231, .62);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .86rem;
     }
 
     .contact-panel {
@@ -1224,6 +1251,7 @@
         <a href="jade-rings.html">Jade Rings</a>
         <a href="jade-pendants.html">Jade Pendants</a>
         <a href="blue-white-porcelain.html">Blue & White</a>
+        <a href="porcelain-figures.html">人物瓷像</a>
         <a href="#porcelain">Modern Porcelain</a>
         <a href="#visit">Visit</a>
       </div>
@@ -1236,6 +1264,7 @@
       <a href="jade-rings.html">翡翠戒指</a>
       <a href="jade-pendants.html">雕刻玉牌</a>
       <a href="blue-white-porcelain.html">青花瓷器</a>
+      <a href="porcelain-figures.html">人物瓷像</a>
     </div>
   </header>
 
@@ -1294,14 +1323,6 @@
               <a class="mini-cta" href="jade-pendants.html">瀏覽玉牌系列</a>
             </div>
           </article>
-          <article class="gallery-card">
-            <div class="gallery-visual"><img src="assets/jade-bangle.webp" alt="翠綠色翡翠手鐲" loading="lazy"></div>
-            <div class="gallery-copy">
-              <h3>玉鐲珍藏</h3>
-              <p>溫潤圓融，親臨店內可細看實物與試戴。</p>
-              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的翡翠手鐲。">查詢玉鐲</a>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -1331,11 +1352,11 @@
             </div>
           </article>
           <article class="gallery-card">
-            <div class="gallery-visual"><img src="assets/porcelain-figure-blue.webp" alt="藍袍傳統人物瓷像" loading="lazy"></div>
+            <a class="gallery-visual" href="porcelain-figures.html" aria-label="瀏覽人物瓷像系列"><img src="assets/porcelain-figure-blue.webp" alt="藍袍傳統人物瓷像" loading="lazy"></a>
             <div class="gallery-copy">
               <h3>人物瓷像</h3>
               <p>從衣紋、釉色到神態，展現傳統人物瓷塑之美。</p>
-              <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的人物瓷像與擺設。">查詢擺設</a>
+              <a class="mini-cta" href="porcelain-figures.html">瀏覽人物瓷像</a>
             </div>
           </article>
         </div>
@@ -1349,11 +1370,17 @@
           <h2>歡迎到大埔店親自挑選。</h2>
           <p>網頁以 WhatsApp 作為主要查詢入口，方便客人在 Instagram、Facebook 或店內 QR code 掃描後，直接詢問款式、價錢與到店時間。</p>
         </div>
-        <div class="details" aria-label="Shop details">
-          <div class="detail-row"><strong>Location</strong><span>大埔懷義街3號</span></div>
-          <div class="detail-row"><strong>Shop Name</strong><span>玲瓏藝舍 · Jenny’s Art House</span></div>
-          <div class="detail-row"><strong>Specialty</strong><span>Jade · Porcelain · Decor</span></div>
-          <div class="detail-row"><strong>Inquiry</strong><span>WhatsApp Direct Message</span></div>
+        <div class="visit-side">
+          <div class="details" aria-label="Shop details">
+            <div class="detail-row"><strong>Location</strong><span>大埔懷義街3號</span></div>
+            <div class="detail-row"><strong>Shop Name</strong><span>玲瓏藝舍 · Jenny’s Art House</span></div>
+            <div class="detail-row"><strong>Specialty</strong><span>Jade · Porcelain · Decor</span></div>
+            <div class="detail-row"><strong>Inquiry</strong><span>WhatsApp Direct Message</span></div>
+          </div>
+          <figure class="shopfront-card">
+            <img src="assets/shopfront-jenny-art-house.jpeg" alt="玲瓏藝舍 Jenny’s Art House 大埔店面" loading="lazy">
+            <figcaption>玲瓏藝舍大埔店面，歡迎親臨挑選玉器、瓷器及家居擺設。</figcaption>
+          </figure>
         </div>
       </div>
     </section>

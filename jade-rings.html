@@ -261,6 +261,11 @@
       box-shadow: 0 16px 38px rgba(23, 18, 14, .08);
     }
 
+    .product.is-sold {
+      opacity: .58;
+      filter: saturate(.58);
+    }
+
     .product-image {
       position: relative;
       aspect-ratio: 1 / 1.18;
@@ -279,6 +284,14 @@
       transform: scale(1.035);
     }
 
+    .product.is-sold:hover .product-image img {
+      transform: none;
+    }
+
+    .product.is-sold .product-image img {
+      filter: grayscale(.38) brightness(1.08);
+    }
+
     .badge {
       position: absolute;
       left: 10px;
@@ -290,6 +303,23 @@
       background: rgba(20, 17, 13, .64);
       font-family: "Noto Sans TC", system-ui, sans-serif;
       font-size: .74rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .sold-ribbon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      padding: 6px 11px;
+      border: 1px solid rgba(248, 240, 223, .46);
+      border-radius: 999px;
+      color: #fffaf0;
+      background: rgba(152, 45, 38, .92);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
       backdrop-filter: blur(8px);
     }
 
@@ -348,6 +378,20 @@
     .product-actions .whatsapp {
       width: 100%;
       min-height: 44px;
+    }
+
+    .sold-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid rgba(20, 17, 13, .12);
+      border-radius: 999px;
+      color: rgba(20, 17, 13, .52);
+      background: rgba(20, 17, 13, .08);
+      font-weight: 750;
+      cursor: default;
     }
 
     .visit {
@@ -475,6 +519,7 @@
       <a href="jade-rings.html" aria-current="page">翡翠戒指</a>
       <a href="jade-pendants.html">雕刻玉牌</a>
       <a href="blue-white-porcelain.html">青花瓷器</a>
+      <a href="porcelain-figures.html">人物瓷像</a>
     </div>
   </header>
 
@@ -497,7 +542,7 @@
           <p class="eyebrow">Available Styles</p>
           <h2>一件一件慢慢睇。</h2>
         </div>
-        <p class="note">如想查詢指定款式，可直接按該商品下方 WhatsApp 按鈕，訊息會自動帶入款式名稱。</p>
+        <p class="note">有貨款式會優先顯示；已售款式會移到後方並標示「已售」，方便分清現貨與參考款。</p>
       </div>
 
       <div class="chips" aria-label="款式分類">
@@ -509,22 +554,8 @@
 
       <div class="product-grid">
         <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「高翠圓蛋鑽石戒指」的現貨、尺寸和價錢。">
-            <img src="assets/ring-green-cabochon.webp" alt="高翠圓蛋鑽石戒指" loading="eager">
-            <span class="badge">翡翠蛋面</span>
-          </a>
-          <div class="product-body">
-            <h3 class="product-title">高翠圓蛋鑽石戒指</h3>
-            <p class="price">HK$ 請查詢</p>
-            <p class="desc">圓潤翠色蛋面，配細緻鑽石圍鑲，適合日常佩戴及收藏。</p>
-            <div class="meta"><span>綠翠</span><span>銀色鑲嵌</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「高翠圓蛋鑽石戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
-          </div>
-        </article>
-
-        <article class="product">
           <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「滿綠三角翡翠戒指」的現貨、尺寸和價錢。">
-            <img src="assets/ring-green-trillion.webp" alt="滿綠三角翡翠戒指" loading="lazy">
+            <img src="assets/ring-green-trillion.webp" alt="滿綠三角翡翠戒指" loading="eager">
             <span class="badge">特色切形</span>
           </a>
           <div class="product-body">
@@ -536,87 +567,108 @@
           </div>
         </article>
 
-        <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「紫羅蘭配陽綠翡翠戒指」的現貨、尺寸和價錢。">
+        <article class="product is-sold">
+          <div class="product-image">
+            <img src="assets/ring-green-cabochon.webp" alt="已售高翠圓蛋鑽石戒指" loading="lazy">
+            <span class="sold-ribbon">已售</span>
+            <span class="badge">翡翠蛋面</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">高翠圓蛋鑽石戒指</h3>
+            <p class="price">HK$ 已售</p>
+            <p class="desc">圓潤翠色蛋面，配細緻鑽石圍鑲，適合日常佩戴及收藏。</p>
+            <div class="meta"><span>綠翠</span><span>銀色鑲嵌</span></div>
+            <div class="product-actions"><span class="sold-button">已售出</span></div>
+          </div>
+        </article>
+
+        <article class="product is-sold">
+          <div class="product-image">
             <img src="assets/ring-lavender-green.webp" alt="紫羅蘭配陽綠翡翠戒指" loading="lazy">
+            <span class="sold-ribbon">已售</span>
             <span class="badge">紫羅蘭</span>
-          </a>
+          </div>
           <div class="product-body">
             <h3 class="product-title">紫羅蘭配陽綠翡翠戒指</h3>
-            <p class="price">HK$ 請查詢</p>
+            <p class="price">HK$ 已售</p>
             <p class="desc">淡紫主石配兩側綠珠，色彩對比明快，整體感覺華麗。</p>
             <div class="meta"><span>紫翡</span><span>陽綠小珠</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「紫羅蘭配陽綠翡翠戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+            <div class="product-actions"><span class="sold-button">已售出</span></div>
           </div>
         </article>
 
-        <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「紫羅蘭蛋面排戒」的現貨、尺寸和價錢。">
+        <article class="product is-sold">
+          <div class="product-image">
             <img src="assets/ring-lavender-row.webp" alt="紫羅蘭蛋面排戒" loading="lazy">
+            <span class="sold-ribbon">已售</span>
             <span class="badge">排戒</span>
-          </a>
+          </div>
           <div class="product-body">
             <h3 class="product-title">紫羅蘭蛋面排戒</h3>
-            <p class="price">HK$ 請查詢</p>
+            <p class="price">HK$ 已售</p>
             <p class="desc">多粒紫羅蘭蛋面排布，配綠色小石，視覺柔和而有層次。</p>
             <div class="meta"><span>粉紫</span><span>多石設計</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「紫羅蘭蛋面排戒」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+            <div class="product-actions"><span class="sold-button">已售出</span></div>
           </div>
         </article>
 
-        <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「冰種長方翡翠戒指」的現貨、尺寸和價錢。">
+        <article class="product is-sold">
+          <div class="product-image">
             <img src="assets/ring-rectangular-jade.webp" alt="冰種長方翡翠戒指" loading="lazy">
+            <span class="sold-ribbon">已售</span>
             <span class="badge">冰種感</span>
-          </a>
+          </div>
           <div class="product-body">
             <h3 class="product-title">冰種長方翡翠戒指</h3>
-            <p class="price">HK$ 請查詢</p>
+            <p class="price">HK$ 已售</p>
             <p class="desc">長方主石線條乾淨，翠色通透，配鑽石戒臂更顯利落。</p>
             <div class="meta"><span>長方戒面</span><span>鑽石戒臂</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「冰種長方翡翠戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+            <div class="product-actions"><span class="sold-button">已售出</span></div>
           </div>
         </article>
 
-        <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「白冰蛋面鑽石戒指」的現貨、尺寸和價錢。">
+        <article class="product is-sold">
+          <div class="product-image">
             <img src="assets/ring-white-cabochon.webp" alt="白冰蛋面鑽石戒指" loading="lazy">
+            <span class="sold-ribbon">已售</span>
             <span class="badge">白冰</span>
-          </a>
+          </div>
           <div class="product-body">
             <h3 class="product-title">白冰蛋面鑽石戒指</h3>
-            <p class="price">HK$ 請查詢</p>
+            <p class="price">HK$ 已售</p>
             <p class="desc">清透白冰蛋面，配細鑽戒托，低調但有光感。</p>
             <div class="meta"><span>白冰</span><span>簡潔鑲嵌</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「白冰蛋面鑽石戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+            <div class="product-actions"><span class="sold-button">已售出</span></div>
           </div>
         </article>
 
-        <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「翠色馬鞍鑽石戒指」的現貨、尺寸和價錢。">
+        <article class="product is-sold">
+          <div class="product-image">
             <img src="assets/ring-imperial-saddle.webp" alt="翠色馬鞍鑽石戒指" loading="lazy">
+            <span class="sold-ribbon">已售</span>
             <span class="badge">馬鞍款</span>
-          </a>
+          </div>
           <div class="product-body">
             <h3 class="product-title">翠色馬鞍鑽石戒指</h3>
-            <p class="price">HK$ 請查詢</p>
+            <p class="price">HK$ 已售</p>
             <p class="desc">飽滿馬鞍戒面，翠色鮮明，兩側鑽石鋪鑲增加份量感。</p>
             <div class="meta"><span>飽滿翠色</span><span>份量感</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「翠色馬鞍鑽石戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+            <div class="product-actions"><span class="sold-button">已售出</span></div>
           </div>
         </article>
 
-        <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「皇冠鑽石翡翠戒指」的現貨、尺寸和價錢。">
+        <article class="product is-sold">
+          <div class="product-image">
             <img src="assets/ring-crown-green.webp" alt="皇冠鑽石翡翠戒指" loading="lazy">
+            <span class="sold-ribbon">已售</span>
             <span class="badge">鑽石鑲嵌</span>
-          </a>
+          </div>
           <div class="product-body">
             <h3 class="product-title">皇冠鑽石翡翠戒指</h3>
-            <p class="price">HK$ 請查詢</p>
+            <p class="price">HK$ 已售</p>
             <p class="desc">皇冠式鑽石托架，突出中央翡翠主石，適合喜歡精緻細節的客人。</p>
             <div class="meta"><span>皇冠托</span><span>立體設計</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「皇冠鑽石翡翠戒指」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+            <div class="product-actions"><span class="sold-button">已售出</span></div>
           </div>
         </article>
       </div>
