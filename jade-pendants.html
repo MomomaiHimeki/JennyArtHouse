@@ -230,6 +230,11 @@
       box-shadow: 0 16px 38px rgba(23, 18, 14, .08);
     }
 
+    .product.is-sold {
+      opacity: .58;
+      filter: saturate(.58);
+    }
+
     .product-image {
       position: relative;
       aspect-ratio: 1 / 1.18;
@@ -246,6 +251,12 @@
 
     .product:hover .product-image img { transform: scale(1.035); }
 
+    .product.is-sold:hover .product-image img { transform: none; }
+
+    .product.is-sold .product-image img {
+      filter: grayscale(.38) brightness(1.08);
+    }
+
     .badge {
       position: absolute;
       left: 10px;
@@ -257,6 +268,23 @@
       background: rgba(20, 17, 13, .64);
       font-family: "Noto Sans TC", system-ui, sans-serif;
       font-size: .74rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .sold-ribbon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      padding: 6px 11px;
+      border: 1px solid rgba(248, 240, 223, .46);
+      border-radius: 999px;
+      color: #fffaf0;
+      background: rgba(152, 45, 38, .92);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
       backdrop-filter: blur(8px);
     }
 
@@ -314,6 +342,18 @@
     .product-actions .whatsapp {
       width: 100%;
       min-height: 44px;
+    }
+
+    .sold-button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: rgba(20, 17, 13, .58);
+      background: rgba(20, 17, 13, .12);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-weight: 800;
     }
 
     footer {
@@ -412,30 +452,16 @@
 
       <div class="product-grid">
         <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「雕龍翡翠玉牌」的現貨、尺寸和價錢。">
-            <img src="assets/pendant-dragon.webp" alt="雕龍翡翠玉牌" loading="eager">
+          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「緬甸A玉龍牌」的現貨、尺寸和價錢。">
+            <img src="assets/pendant-dragon.webp" alt="緬甸A玉龍牌" loading="eager">
             <span class="badge">龍紋玉牌</span>
           </a>
           <div class="product-body">
-            <h3 class="product-title">雕龍翡翠玉牌</h3>
-            <p class="price">HK$ 請查詢</p>
-            <p class="desc">淡綠飄翠玉牌，龍紋雕工立體，適合收藏或配繩佩戴。</p>
+            <h3 class="product-title">緬甸A玉龍牌</h3>
+            <p class="price">HK$ 26,800</p>
+            <p class="desc">淡綠飄翠玉牌，龍紋雕工立體，尺寸約 64.8 x 42.5 x 4.8mm。</p>
             <div class="meta"><span>翡翠</span><span>雕龍</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「雕龍翡翠玉牌」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
-          </div>
-        </article>
-
-        <article class="product">
-          <a class="product-image js-whatsapp" href="#" data-message="你好！我想查詢「雲紋如意翡翠玉牌」的現貨、尺寸和價錢。">
-            <img src="assets/pendant-cloud.webp" alt="雲紋如意翡翠玉牌" loading="lazy">
-            <span class="badge">雲紋雕刻</span>
-          </a>
-          <div class="product-body">
-            <h3 class="product-title">雲紋如意翡翠玉牌</h3>
-            <p class="price">HK$ 請查詢</p>
-            <p class="desc">黃翡、綠意與白底自然過渡，雲紋線條柔和。</p>
-            <div class="meta"><span>黃翡</span><span>如意紋</span></div>
-            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「雲紋如意翡翠玉牌」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「緬甸A玉龍牌」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
           </div>
         </article>
 
@@ -446,8 +472,8 @@
           </a>
           <div class="product-body">
             <h3 class="product-title">圓形觀音翡翠玉牌</h3>
-            <p class="price">HK$ 請查詢</p>
-            <p class="desc">圓牌造型飽滿，觀音雕像清晰，適合日常平安佩戴。</p>
+            <p class="price">HK$ 13,000</p>
+            <p class="desc">圓牌造型飽滿，觀音雕像清晰，尺寸約 56.6 x 7.3mm。</p>
             <div class="meta"><span>圓牌</span><span>觀音</span></div>
             <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「圓形觀音翡翠玉牌」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
           </div>
@@ -464,6 +490,21 @@
             <p class="desc">綠色分佈自然，花葉雕線細緻，配襯金色小擺件拍攝。</p>
             <div class="meta"><span>綠翠</span><span>吊墜</span></div>
             <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「綠翠花葉雕刻吊墜」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a></div>
+          </div>
+        </article>
+
+        <article class="product is-sold">
+          <div class="product-image">
+            <img src="assets/pendant-cloud.webp" alt="已售雲紋如意翡翠玉牌" loading="lazy">
+            <span class="sold-ribbon">已售</span>
+            <span class="badge">雲紋雕刻</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">雲紋如意翡翠玉牌</h3>
+            <p class="price">HK$ 已售</p>
+            <p class="desc">黃翡、綠意與白底自然過渡，雲紋線條柔和。</p>
+            <div class="meta"><span>黃翡</span><span>如意紋</span></div>
+            <div class="product-actions"><span class="sold-button">已售出</span></div>
           </div>
         </article>
       </div>

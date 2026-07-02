@@ -1231,8 +1231,7 @@
 </head>
 <body class="intro-active">
   <div class="intro" id="intro" aria-label="玲瓏藝舍開場影片">
-    <video class="intro-video" id="introVideo" autoplay muted playsinline preload="auto" poster="assets/linglung-poster.jpg">
-      <source media="(max-width: 759px) and (orientation: portrait)" src="assets/linglung-intro-mobile-257.mp4" type="video/mp4">
+    <video class="intro-video" id="introVideo" autoplay muted playsinline preload="auto" poster="assets/linglung-poster.jpg" data-desktop-src="assets/linglung-intro.mp4" data-mobile-src="assets/linglung-intro-mobile-257.mp4" data-desktop-poster="assets/linglung-poster.jpg" data-mobile-poster="assets/linglung-poster-mobile-257.jpg">
       <source src="assets/linglung-intro.mp4" type="video/mp4">
     </video>
     <div class="intro-inner">
@@ -1441,10 +1440,28 @@
     const introVideo = document.getElementById("introVideo");
     const introEnter = document.getElementById("introEnter");
     const heroVideo = document.getElementById("heroVideo");
-    const portraitIntro = window.matchMedia("(max-width: 759px) and (orientation: portrait)").matches;
+    const introQuery = window.matchMedia("(max-width: 759px) and (orientation: portrait)");
 
-    if (portraitIntro) {
-      introVideo.poster = "assets/linglung-poster-mobile-257.jpg";
+    function setIntroVideoSource() {
+      const introSrc = introQuery.matches
+        ? introVideo.dataset.mobileSrc
+        : introVideo.dataset.desktopSrc;
+      const introPoster = introQuery.matches
+        ? introVideo.dataset.mobilePoster
+        : introVideo.dataset.desktopPoster;
+
+      introVideo.poster = introPoster;
+      if (!introVideo.getAttribute("src") || !introVideo.currentSrc.endsWith(introSrc)) {
+        introVideo.src = introSrc;
+        introVideo.load();
+      }
+    }
+
+    setIntroVideoSource();
+    if (introQuery.addEventListener) {
+      introQuery.addEventListener("change", setIntroVideoSource);
+    } else if (introQuery.addListener) {
+      introQuery.addListener(setIntroVideoSource);
     }
 
     function dismissIntro() {
@@ -1458,9 +1475,9 @@
     introEnter.addEventListener("click", dismissIntro);
     introVideo.addEventListener("ended", dismissIntro);
     introVideo.addEventListener("error", () => {
-      introVideo.poster = portraitIntro
-        ? "assets/linglung-poster-mobile-257.jpg"
-        : "assets/linglung-poster.jpg";
+      introVideo.poster = introQuery.matches
+        ? introVideo.dataset.mobilePoster
+        : introVideo.dataset.desktopPoster;
     });
 
     const introPlayback = introVideo.play();
