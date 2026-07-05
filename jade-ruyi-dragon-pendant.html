@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="緬甸A玉如意龍牌，玲瓏藝舍 Jenny's Art House 商品詳情、尺寸、價錢及 WhatsApp 查詢。">
+  <title>緬甸A玉如意龍牌 | Jenny's Art House 玲瓏藝舍</title>
+  <style>
+    :root {
+      --ink: #14110d;
+      --paper: #efe3c7;
+      --paper-light: #f8f0df;
+      --cinnabar: #982d26;
+      --jade: #315f49;
+      --line: rgba(20, 17, 13, .14);
+      --shadow: 0 22px 60px rgba(23, 18, 14, .16);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(239, 227, 199, .9), rgba(239, 227, 199, .95)),
+        url("assets/rice-paper-texture.webp") center / 760px auto repeat;
+      font-family: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    figure { margin: 0; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(20, 17, 13, .12);
+      background:
+        linear-gradient(180deg, rgba(248, 240, 223, .96), rgba(248, 240, 223, .86)),
+        url("assets/rice-paper-texture.webp") center / 760px auto repeat;
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      width: min(1180px, calc(100% - 28px));
+      min-height: 70px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      font-size: 1.05rem;
+      font-weight: 650;
+      letter-spacing: .02em;
+      line-height: 1.15;
+    }
+
+    .brand span {
+      color: rgba(20, 17, 13, .58);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .74rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+    }
+
+    .nav-actions,
+    .category-shortcuts,
+    .meta,
+    .whatsapp,
+    .detail-list,
+    .caption {
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      font-size: .86rem;
+    }
+
+    .nav-link,
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(248, 240, 223, .5);
+      white-space: nowrap;
+    }
+
+    .whatsapp {
+      border-color: rgba(49, 95, 73, .35);
+      color: #f8f0df;
+      background: var(--jade);
+      font-weight: 750;
+    }
+
+    .category-shortcuts {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 0 0 10px;
+      scrollbar-width: none;
+    }
+
+    .category-shortcuts::-webkit-scrollbar { display: none; }
+
+    .category-shortcuts a {
+      flex: 0 0 auto;
+      padding: 7px 12px;
+      border: 1px solid rgba(20, 17, 13, .14);
+      border-radius: 999px;
+      background: rgba(248, 240, 223, .52);
+      color: rgba(20, 17, 13, .72);
+      font-size: .8rem;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 34px 0 58px;
+    }
+
+    .product-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, .72fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .gallery {
+      display: grid;
+      gap: 14px;
+    }
+
+    .gallery-main,
+    .gallery-tile {
+      overflow: hidden;
+      border: 1px solid rgba(20, 17, 13, .13);
+      border-radius: 8px;
+      background: #080706;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-main {
+      min-height: 360px;
+      aspect-ratio: 4 / 5;
+    }
+
+    .gallery-main img,
+    .gallery-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #080706;
+    }
+
+    .gallery-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .gallery-tile {
+      aspect-ratio: 1 / 1;
+    }
+
+    .caption {
+      margin-top: 8px;
+      color: rgba(20, 17, 13, .58);
+      font-size: .86rem;
+    }
+
+    .panel {
+      position: sticky;
+      top: 100px;
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid rgba(20, 17, 13, .13);
+      border-radius: 8px;
+      background: rgba(248, 240, 223, .82);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--cinnabar);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.65rem);
+      line-height: 1.08;
+      letter-spacing: .02em;
+    }
+
+    .price {
+      margin: 0;
+      color: var(--cinnabar);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: 1.18rem;
+      font-weight: 850;
+    }
+
+    .desc {
+      margin: 0;
+      color: rgba(20, 17, 13, .72);
+      font-size: 1rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .meta span {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(20, 17, 13, .08);
+      color: rgba(20, 17, 13, .62);
+      font-size: .82rem;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 16px 0 0;
+      border-top: 1px solid rgba(20, 17, 13, .12);
+      color: rgba(20, 17, 13, .68);
+      font-size: .95rem;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .detail-row dt,
+    .detail-row dd {
+      margin: 0;
+    }
+
+    .detail-row dt {
+      color: rgba(20, 17, 13, .48);
+    }
+
+    .detail-row dd {
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .panel .whatsapp {
+      width: 100%;
+      min-height: 48px;
+      margin-top: 4px;
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      color: rgba(20, 17, 13, .52);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        min-height: 64px;
+        padding: 10px 0;
+      }
+
+      .nav-actions {
+        gap: 6px;
+        font-size: .76rem;
+      }
+
+      .nav-link,
+      .whatsapp {
+        min-height: 36px;
+        padding: 0 10px;
+      }
+
+      main {
+        width: min(100% - 18px, 520px);
+        padding-top: 18px;
+      }
+
+      .product-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-main {
+        min-height: 320px;
+        aspect-ratio: 3 / 4.4;
+      }
+
+      .panel {
+        position: static;
+        padding: 18px;
+      }
+
+      .gallery-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="主要導覽">
+      <a class="brand" href="index.html#home">Jenny's Art House<span>玲瓏藝舍</span></a>
+      <div class="nav-actions">
+        <a class="nav-link" href="jade-pendants.html">返回雕刻玉牌</a>
+        <a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「緬甸A玉如意龍牌」的現貨、尺寸和價錢。">WhatsApp 查詢</a>
+      </div>
+    </nav>
+    <div class="category-shortcuts" aria-label="商品分類捷徑">
+      <a href="jade-necklaces.html">翡翠吊墜</a>
+      <a href="jade-rings.html">翡翠戒指</a>
+      <a href="jade-pendants.html" aria-current="page">雕刻玉牌</a>
+      <a href="blue-white-porcelain.html">青花瓷器</a>
+      <a href="porcelain-figures.html">人物瓷像</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="product-hero" aria-label="緬甸A玉如意龍牌商品詳情">
+      <div class="gallery">
+        <figure class="gallery-main">
+          <img src="assets/ruyi-dragon-pendant-closeup.png" alt="緬甸A玉如意龍牌近拍正面">
+        </figure>
+        <div class="gallery-strip" aria-label="商品相片">
+          <figure>
+            <div class="gallery-tile">
+              <img src="assets/pendant-green-carved.webp" alt="緬甸A玉如意龍牌展示相">
+            </div>
+            <figcaption class="caption">展示相</figcaption>
+          </figure>
+          <figure>
+            <div class="gallery-tile">
+              <img src="assets/ruyi-dragon-pendant-closeup.png" alt="緬甸A玉如意龍牌雕刻細節">
+            </div>
+            <figcaption class="caption">雕刻細節</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <p class="eyebrow">Product Detail</p>
+        <h1>緬甸A玉如意龍牌</h1>
+        <p class="price">HK$ 12,500｜請查詢</p>
+        <p class="desc">綠色分佈自然，如意龍紋雕線細緻，透光感柔和。適合收藏、配繩佩戴或作為禮品。</p>
+        <div class="meta"><span>緬甸A玉</span><span>如意龍</span><span>雕刻玉牌</span></div>
+
+        <dl class="detail-list">
+          <div class="detail-row">
+            <dt>尺寸</dt>
+            <dd>56.2 x 36.8 x 7.6mm</dd>
+          </div>
+          <div class="detail-row">
+            <dt>類別</dt>
+            <dd>翡翠玉牌 / 吊墜</dd>
+          </div>
+          <div class="detail-row">
+            <dt>查詢</dt>
+            <dd>WhatsApp 6803 6381</dd>
+          </div>
+        </dl>
+
+        <a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「緬甸A玉如意龍牌」的現貨、尺寸和價錢。">WhatsApp 查詢呢件</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Jenny's Art House · 玲瓏藝舍</span><br>
+    <span>大埔懷義街3號 · WhatsApp 6803 6381</span>
+  </footer>
+
+  <script>
+    const whatsappNumber = "85268036381";
+
+    function buildWhatsAppLink(message) {
+      return "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+    }
+
+    document.querySelectorAll(".js-whatsapp").forEach((link) => {
+      link.href = buildWhatsAppLink(link.dataset.message || "你好！我想查詢 Jenny's Art House 玲瓏藝舍的緬甸A玉如意龍牌。");
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

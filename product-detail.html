@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jenny's Art House 玲瓏藝舍商品詳情、相片、尺寸、價錢及 WhatsApp 查詢。">
+  <title>商品詳情 | Jenny's Art House 玲瓏藝舍</title>
+  <style>
+    :root {
+      --ink: #14110d;
+      --paper: #efe3c7;
+      --paper-light: #f8f0df;
+      --cinnabar: #982d26;
+      --jade: #315f49;
+      --line: rgba(20, 17, 13, .14);
+      --shadow: 0 22px 60px rgba(23, 18, 14, .16);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(239, 227, 199, .9), rgba(239, 227, 199, .95)),
+        url("assets/rice-paper-texture.webp") center / 760px auto repeat;
+      font-family: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    figure { margin: 0; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(20, 17, 13, .12);
+      background:
+        linear-gradient(180deg, rgba(248, 240, 223, .96), rgba(248, 240, 223, .86)),
+        url("assets/rice-paper-texture.webp") center / 760px auto repeat;
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      width: min(1180px, calc(100% - 28px));
+      min-height: 70px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      font-size: 1.05rem;
+      font-weight: 650;
+      letter-spacing: .02em;
+      line-height: 1.15;
+    }
+
+    .brand span {
+      color: rgba(20, 17, 13, .58);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .74rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+    }
+
+    .nav-actions,
+    .category-shortcuts,
+    .meta,
+    .whatsapp,
+    .detail-list,
+    .caption,
+    .empty-state {
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      font-size: .86rem;
+    }
+
+    .nav-link,
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(248, 240, 223, .5);
+      white-space: nowrap;
+    }
+
+    .whatsapp {
+      border-color: rgba(49, 95, 73, .35);
+      color: #f8f0df;
+      background: var(--jade);
+      font-weight: 750;
+    }
+
+    .category-shortcuts {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 0 0 10px;
+      scrollbar-width: none;
+    }
+
+    .category-shortcuts::-webkit-scrollbar { display: none; }
+
+    .category-shortcuts a {
+      flex: 0 0 auto;
+      padding: 7px 12px;
+      border: 1px solid rgba(20, 17, 13, .14);
+      border-radius: 999px;
+      background: rgba(248, 240, 223, .52);
+      color: rgba(20, 17, 13, .72);
+      font-size: .8rem;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 34px 0 58px;
+    }
+
+    .product-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, .72fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .gallery {
+      display: grid;
+      gap: 14px;
+    }
+
+    .gallery-main,
+    .gallery-tile {
+      overflow: hidden;
+      border: 1px solid rgba(20, 17, 13, .13);
+      border-radius: 8px;
+      background: #080706;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-main {
+      min-height: 360px;
+      aspect-ratio: 4 / 5;
+    }
+
+    .gallery-main img,
+    .gallery-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #080706;
+    }
+
+    .gallery-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .gallery-tile { aspect-ratio: 1 / 1; }
+
+    .caption {
+      margin-top: 8px;
+      color: rgba(20, 17, 13, .58);
+      font-size: .86rem;
+    }
+
+    .panel {
+      position: sticky;
+      top: 100px;
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid rgba(20, 17, 13, .13);
+      border-radius: 8px;
+      background: rgba(248, 240, 223, .82);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--cinnabar);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.65rem);
+      line-height: 1.08;
+      letter-spacing: .02em;
+    }
+
+    .price {
+      margin: 0;
+      color: var(--cinnabar);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-size: 1.18rem;
+      font-weight: 850;
+    }
+
+    .desc {
+      margin: 0;
+      color: rgba(20, 17, 13, .72);
+      font-size: 1rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .meta span {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(20, 17, 13, .08);
+      color: rgba(20, 17, 13, .62);
+      font-size: .82rem;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 16px 0 0;
+      border-top: 1px solid rgba(20, 17, 13, .12);
+      color: rgba(20, 17, 13, .68);
+      font-size: .95rem;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .detail-row dt,
+    .detail-row dd { margin: 0; }
+    .detail-row dt { color: rgba(20, 17, 13, .48); }
+
+    .detail-row dd {
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .panel .whatsapp {
+      width: 100%;
+      min-height: 48px;
+      margin-top: 4px;
+    }
+
+    .empty-state {
+      display: grid;
+      gap: 14px;
+      max-width: 640px;
+      margin: 70px auto;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(248, 240, 223, .82);
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      color: rgba(20, 17, 13, .52);
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        min-height: 64px;
+        padding: 10px 0;
+      }
+
+      .nav-actions {
+        gap: 6px;
+        font-size: .76rem;
+      }
+
+      .nav-link,
+      .whatsapp {
+        min-height: 36px;
+        padding: 0 10px;
+      }
+
+      main {
+        width: min(100% - 18px, 520px);
+        padding-top: 18px;
+      }
+
+      .product-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-main {
+        min-height: 320px;
+        aspect-ratio: 3 / 4.4;
+      }
+
+      .panel {
+        position: static;
+        padding: 18px;
+      }
+
+      .gallery-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="主要導覽">
+      <a class="brand" href="index.html#home">Jenny's Art House<span>玲瓏藝舍</span></a>
+      <div class="nav-actions">
+        <a class="nav-link" id="backLink" href="index.html#jade">返回分類</a>
+        <a class="whatsapp js-whatsapp" id="topWhatsApp" href="#" target="_blank" rel="noopener">WhatsApp 查詢</a>
+      </div>
+    </nav>
+    <div class="category-shortcuts" aria-label="商品分類捷徑">
+      <a href="jade-necklaces.html">翡翠吊墜</a>
+      <a href="jade-rings.html">翡翠戒指</a>
+      <a href="jade-pendants.html">雕刻玉牌</a>
+      <a href="blue-white-porcelain.html">青花瓷器</a>
+      <a href="porcelain-figures.html">人物瓷像</a>
+    </div>
+  </header>
+
+  <main id="main"></main>
+
+  <footer>
+    <span>© <span id="year"></span> Jenny's Art House · 玲瓏藝舍</span><br>
+    <span>大埔懷義街3號 · WhatsApp 6803 6381</span>
+  </footer>
+
+  <script>
+    const whatsappNumber = "85268036381";
+
+    const products = {
+      "jade-dragon-pendant": {
+        name: "緬甸A玉龍牌",
+        price: "HK$ 26,800｜請查詢",
+        intro: "淡綠飄翠玉牌，龍紋雕工立體，尺寸約 64.8 x 42.5 x 4.8mm。適合收藏或配繩佩戴。",
+        images: [{ src: "assets/pendant-dragon.webp", alt: "緬甸A玉龍牌" }],
+        tags: ["翡翠", "雕龍", "雕刻玉牌"],
+        details: [["尺寸", "64.8 x 42.5 x 4.8mm"], ["類別", "翡翠玉牌 / 吊墜"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-pendants.html#products",
+        backText: "返回雕刻玉牌"
+      },
+      "jade-guanyin-round-pendant": {
+        name: "圓形觀音翡翠玉牌",
+        price: "HK$ 13,000｜請查詢",
+        intro: "圓牌造型飽滿，觀音雕像清晰，尺寸約 56.6 x 7.3mm。寓意平安順遂，適合日常收藏佩戴。",
+        images: [{ src: "assets/pendant-guanyin-round.webp", alt: "圓形觀音翡翠玉牌" }],
+        tags: ["圓牌", "觀音", "雕刻玉牌"],
+        details: [["尺寸", "56.6 x 7.3mm"], ["類別", "翡翠玉牌 / 吊墜"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-pendants.html#products",
+        backText: "返回雕刻玉牌"
+      },
+      "jade-ruyi-dragon-pendant": {
+        name: "緬甸A玉如意龍牌",
+        price: "HK$ 12,500｜請查詢",
+        intro: "綠色分佈自然，如意龍紋雕線細緻，透光感柔和。適合收藏、配繩佩戴或作為禮品。",
+        images: [
+          { src: "assets/ruyi-dragon-pendant-closeup.png", alt: "緬甸A玉如意龍牌近拍正面", caption: "近拍細節" },
+          { src: "assets/pendant-green-carved.webp", alt: "緬甸A玉如意龍牌展示相", caption: "展示相" }
+        ],
+        tags: ["緬甸A玉", "如意龍", "雕刻玉牌"],
+        details: [["尺寸", "56.2 x 36.8 x 7.6mm"], ["類別", "翡翠玉牌 / 吊墜"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-pendants.html#products",
+        backText: "返回雕刻玉牌"
+      },
+      "jade-green-trillion-ring": {
+        name: "滿綠三角翡翠戒指",
+        price: "HK$ 請查詢",
+        intro: "三角形主石配流線鑲嵌，線條俐落，年輕客人亦容易配搭。",
+        images: [{ src: "assets/ring-green-trillion.webp", alt: "滿綠三角翡翠戒指" }],
+        tags: ["滿綠感", "鑽石點綴", "翡翠戒指"],
+        details: [["價錢", "請查詢"], ["類別", "翡翠戒指"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-rings.html#products",
+        backText: "返回翡翠戒指"
+      },
+      "jade-teardrop-pendant": {
+        name: "翠綠水滴翡翠吊墜",
+        price: "HK$ 請查詢",
+        intro: "鮮明翠色水滴造型，配鑲嵌細節，適合晚宴或日常精緻配搭。",
+        images: [{ src: "assets/jade-teardrop-pendant.jpeg", alt: "翠綠水滴翡翠吊墜" }],
+        tags: ["滿綠感", "水滴造型", "翡翠吊墜"],
+        details: [["價錢", "請查詢"], ["類別", "翡翠吊墜"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-necklaces.html#products",
+        backText: "返回翡翠吊墜"
+      },
+      "jade-carved-gourd-pendant": {
+        name: "雕花葫蘆翡翠吊墜",
+        price: "HK$ 請查詢",
+        intro: "翠色飽滿，表面帶細緻雕花紋理，銀色鑲邊令輪廓更突出。",
+        images: [{ src: "assets/jade-carved-gourd-pendant.jpeg", alt: "雕花葫蘆翡翠吊墜" }],
+        tags: ["葫蘆造型", "雕花鑲嵌", "翡翠吊墜"],
+        details: [["價錢", "請查詢"], ["類別", "翡翠吊墜"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-necklaces.html#products",
+        backText: "返回翡翠吊墜"
+      },
+      "jade-lavender-buddha-pendant": {
+        name: "緬甸A玉春帶彩佛公",
+        price: "HK$ 13,000｜請查詢",
+        intro: "春帶彩佛公，色澤柔和，佛公笑容圓潤親切，尺寸約 50.7 x 48.2 x 12.9mm。",
+        images: [{ src: "assets/jade-lavender-buddha-pendant.png", alt: "緬甸A玉春帶彩佛公" }],
+        tags: ["緬甸A玉", "春帶彩", "佛公吊墜"],
+        details: [["尺寸", "50.7 x 48.2 x 12.9mm"], ["類別", "翡翠吊墜"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-necklaces.html#products",
+        backText: "返回翡翠吊墜"
+      },
+      "blue-white-bird-vase": {
+        name: "青花花鳥瓷瓶",
+        price: "HK$ 請查詢",
+        intro: "花鳥筆意清雅，瓶身比例端正，適合玄關、客廳或書房陳設。",
+        images: [{ src: "assets/porcelain-blue-white-vase.webp", alt: "青花花鳥瓷瓶" }],
+        tags: ["青花", "花鳥", "瓷器"],
+        details: [["價錢", "請查詢"], ["類別", "青花瓷器"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "blue-white-porcelain.html#products",
+        backText: "返回青花瓷器"
+      },
+      "porcelain-guanyin-1980s": {
+        name: "80年代景徳鎮手繪古彩觀音",
+        price: "HK$ 6,000｜請查詢",
+        intro: "80年代景徳鎮手繪古彩觀音，高約33cm，寬約12cm。",
+        images: [{ src: "assets/porcelain-lady-vase.jpeg", alt: "80年代景徳鎮手繪古彩觀音" }],
+        tags: ["景徳鎮", "手繪古彩", "人物瓷像"],
+        details: [["尺寸", "高約33cm，寬約12cm"], ["類別", "人物瓷像"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "porcelain-figures.html#products",
+        backText: "返回人物瓷像"
+      },
+      "porcelain-child-brothers": {
+        name: "90年代景德鎮青花釉里紅哥背弟",
+        price: "HK$ 4,800｜請查詢",
+        intro: "90年代景德鎮青花釉里紅哥背弟，高約26cm，寬約11cm。",
+        images: [{ src: "assets/porcelain-child-figure.jpeg", alt: "90年代景德鎮青花釉里紅哥背弟" }],
+        tags: ["景德鎮", "青花釉里紅", "童子瓷像"],
+        details: [["尺寸", "高約26cm，寬約11cm"], ["類別", "人物瓷像"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "porcelain-figures.html#products",
+        backText: "返回人物瓷像"
+      },
+      "porcelain-scholar-goose": {
+        name: "90年代粉彩王羲之戲鵝",
+        price: "HK$ 12,000｜請查詢",
+        intro: "90年代粉彩王羲之戲鵝，高約56cm，寬約25cm。",
+        images: [{ src: "assets/porcelain-scholar-goose.jpeg", alt: "90年代粉彩王羲之戲鵝" }],
+        tags: ["粉彩", "王羲之戲鵝", "人物瓷像"],
+        details: [["尺寸", "高約56cm，寬約25cm"], ["類別", "人物瓷像"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "porcelain-figures.html#products",
+        backText: "返回人物瓷像"
+      },
+      "porcelain-li-bai-drunk": {
+        name: "70年代景德鎮陶瓷李白醉酒",
+        price: "HK$ 3,800｜請查詢",
+        intro: "70年代景德鎮陶瓷李白醉酒，高約15cm，寬約33cm。",
+        images: [{ src: "assets/porcelain-sleeping-figure.webp", alt: "70年代景德鎮陶瓷李白醉酒" }],
+        tags: ["景德鎮", "李白醉酒", "人物擺設"],
+        details: [["尺寸", "高約15cm，寬約33cm"], ["類別", "人物瓷像"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "porcelain-figures.html#products",
+        backText: "返回人物瓷像"
+      },
+      "porcelain-official-figure": {
+        name: "彩釉文官人物瓷像",
+        price: "HK$ 8,000｜請查詢",
+        intro: "衣紋與釉彩細節豐富，適合喜歡傳統人物題材的客人。",
+        images: [{ src: "assets/porcelain-official-figure.webp", alt: "彩釉文官人物瓷像" }],
+        tags: ["人物瓷像", "彩釉", "傳統題材"],
+        details: [["價錢", "HK$ 8,000｜請查詢"], ["類別", "人物瓷像"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "porcelain-figures.html#products",
+        backText: "返回人物瓷像"
+      },
+      "porcelain-fuk-luk-sau-set": {
+        name: "80年代粉彩福祿壽瓷像組",
+        price: "HK$ 4,800｜請查詢",
+        intro: "80年代粉彩福祿壽瓷像組，高約38cm，寬約50cm，一套。",
+        images: [{ src: "assets/porcelain-three-figures.webp", alt: "80年代粉彩福祿壽瓷像組" }],
+        tags: ["粉彩", "福祿壽", "成組擺設"],
+        details: [["尺寸", "高約38cm，寬約50cm，一套"], ["類別", "人物瓷像"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "porcelain-figures.html#products",
+        backText: "返回人物瓷像"
+      }
+    };
+
+    function buildWhatsAppLink(message) {
+      return "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function renderProduct(product) {
+      const mainImage = product.images[0];
+      const galleryStrip = product.images.map((image, index) => `
+        <figure>
+          <div class="gallery-tile">
+            <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="${index === 0 ? "eager" : "lazy"}">
+          </div>
+          <figcaption class="caption">${escapeHtml(image.caption || (index === 0 ? "主圖" : "細節相"))}</figcaption>
+        </figure>
+      `).join("");
+
+      const details = product.details.map(([label, value]) => `
+        <div class="detail-row">
+          <dt>${escapeHtml(label)}</dt>
+          <dd>${escapeHtml(value)}</dd>
+        </div>
+      `).join("");
+
+      const tags = product.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
+      const message = `你好！我想查詢「${product.name}」的現貨、尺寸和價錢。`;
+
+      document.title = `${product.name} | Jenny's Art House 玲瓏藝舍`;
+      document.querySelector("meta[name='description']").content = `${product.name}，Jenny's Art House 玲瓏藝舍商品詳情、相片、尺寸、價錢及 WhatsApp 查詢。`;
+      document.getElementById("backLink").href = product.backHref;
+      document.getElementById("backLink").textContent = product.backText;
+      document.getElementById("topWhatsApp").href = buildWhatsAppLink(message);
+
+      document.getElementById("main").innerHTML = `
+        <section class="product-hero" aria-label="${escapeHtml(product.name)}商品詳情">
+          <div class="gallery">
+            <figure class="gallery-main">
+              <img src="${escapeHtml(mainImage.src)}" alt="${escapeHtml(mainImage.alt)}">
+            </figure>
+            <div class="gallery-strip" aria-label="商品相片">${galleryStrip}</div>
+          </div>
+
+          <aside class="panel">
+            <p class="eyebrow">Product Detail</p>
+            <h1>${escapeHtml(product.name)}</h1>
+            <p class="price">${escapeHtml(product.price)}</p>
+            <p class="desc">${escapeHtml(product.intro)}</p>
+            <div class="meta">${tags}</div>
+            <dl class="detail-list">${details}</dl>
+            <a class="whatsapp" href="${buildWhatsAppLink(message)}" target="_blank" rel="noopener">WhatsApp 查詢呢件</a>
+          </aside>
+        </section>
+      `;
+    }
+
+    function renderMissing() {
+      document.getElementById("main").innerHTML = `
+        <section class="empty-state">
+          <p class="eyebrow">Product Detail</p>
+          <h1>搵唔到呢件商品</h1>
+          <p>可能商品連結已更新，請返回分類頁重新選擇，或者直接 WhatsApp 查詢。</p>
+          <a class="whatsapp" href="${buildWhatsAppLink("你好！我想查詢 Jenny's Art House 玲瓏藝舍的產品。")}" target="_blank" rel="noopener">WhatsApp 查詢</a>
+        </section>
+      `;
+    }
+
+    const id = new URLSearchParams(window.location.search).get("id");
+    const product = products[id];
+    if (product) {
+      renderProduct(product);
+    } else {
+      renderMissing();
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
