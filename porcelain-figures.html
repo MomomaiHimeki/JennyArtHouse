@@ -269,6 +269,14 @@
       padding: 14px;
     }
 
+    .product.has-detail .product-body {
+      cursor: pointer;
+    }
+
+    .product.has-detail .product-body:hover .product-title {
+      color: var(--cinnabar);
+    }
+
     .product-title {
       margin: 0;
       font-size: clamp(1.05rem, 2.4vw, 1.24rem);
@@ -519,6 +527,18 @@
       link.href = buildWhatsAppLink(link.dataset.message || "你好！我想查詢 Jenny’s Art House 玲瓏藝舍的產品。");
       link.target = "_blank";
       link.rel = "noopener";
+    });
+
+    document.querySelectorAll(".product").forEach((product) => {
+      const detailLink = product.querySelector(".product-image[href*='product-detail.html']");
+      const body = product.querySelector(".product-body");
+      if (!detailLink || !body) return;
+
+      product.classList.add("has-detail");
+      body.addEventListener("click", (event) => {
+        if (event.target.closest("a, button, .product-actions")) return;
+        window.location.href = detailLink.href;
+      });
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
