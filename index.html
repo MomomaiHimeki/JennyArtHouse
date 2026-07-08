@@ -610,6 +610,29 @@
       text-align: right;
     }
 
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border: 1px solid rgba(38, 108, 80, .72);
+      border-radius: 999px;
+      background: var(--deep-green);
+      color: #fffaf0;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(20, 49, 38, .18);
+      transition: background .25s ease, border-color .25s ease, transform .25s ease;
+    }
+
+    .map-link:hover {
+      background: #1f5b43;
+      border-color: rgba(31, 91, 67, .9);
+      transform: translateY(-1px);
+    }
+
     .shopfront-card {
       display: grid;
       gap: 10px;
@@ -627,9 +650,10 @@
     }
 
     .shopfront-card figcaption {
-      color: rgba(247, 241, 231, .62);
+      color: rgba(55, 43, 31, .78);
       font-family: "Noto Sans TC", system-ui, sans-serif;
       font-size: .86rem;
+      font-weight: 600;
     }
 
     .contact-panel {
@@ -947,6 +971,18 @@
       transform: scale(1.035);
     }
 
+    .gallery-visual.ring-entry img {
+      object-position: center 58%;
+    }
+
+    .gallery-visual.buddha-entry img {
+      object-position: center 82%;
+    }
+
+    .gallery-visual.peace-entry img {
+      object-position: center 84%;
+    }
+
     .gallery-card.tall {
       min-height: 470px;
     }
@@ -987,6 +1023,14 @@
       .gallery-card,
       .gallery-card.tall {
         min-height: 390px;
+      }
+
+      .gallery-visual.buddha-entry img {
+        object-position: center 86%;
+      }
+
+      .gallery-visual.peace-entry img {
+        object-position: center 88%;
       }
     }
   
@@ -1249,6 +1293,8 @@
         <a href="#jade">Featured Jade</a>
         <a href="jade-necklaces.html">Jade Pendants</a>
         <a href="jade-rings.html">Jade Rings</a>
+        <a href="jade-buddha.html">Jade Buddha</a>
+        <a href="jade-peace-buckle.html">Peace Buckle</a>
         <a href="jade-pendants.html">Carved Jade</a>
         <a href="blue-white-porcelain.html">Blue & White</a>
         <a href="porcelain-figures.html">人物瓷像</a>
@@ -1263,6 +1309,8 @@
     <div class="category-shortcuts" aria-label="商品分類捷徑">
       <a href="jade-necklaces.html">翡翠吊墜</a>
       <a href="jade-rings.html">翡翠戒指</a>
+      <a href="jade-buddha.html">佛公</a>
+      <a href="jade-peace-buckle.html">平安扣</a>
       <a href="jade-pendants.html">雕刻玉牌</a>
       <a href="blue-white-porcelain.html">青花瓷器</a>
       <a href="porcelain-figures.html">人物瓷像</a>
@@ -1309,11 +1357,27 @@
             </div>
           </article>
           <article class="gallery-card tall">
-            <a class="gallery-visual" href="jade-rings.html" aria-label="瀏覽翡翠戒指系列"><img src="assets/jade-rings-collection.webp" alt="多款紫綠翡翠戒指" loading="eager"></a>
+            <a class="gallery-visual ring-entry" href="jade-rings.html" aria-label="瀏覽翡翠戒指系列"><img src="assets/jade-rings-collection.webp" alt="多款紫綠翡翠戒指" loading="eager"></a>
             <div class="gallery-copy">
               <h3>翡翠戒指</h3>
               <p>紫翡與翠色相映，古典材質配上現代鑲嵌。</p>
               <a class="mini-cta" href="jade-rings.html">瀏覽戒指系列</a>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <a class="gallery-visual buddha-entry" href="jade-buddha.html" aria-label="瀏覽佛公玉器系列"><img src="assets/jade-buddha-icy-pendant.png" alt="緬甸A玉佛公" loading="lazy"></a>
+            <div class="gallery-copy">
+              <h3>佛公</h3>
+              <p>神態圓融，玉質冰潤，適合佩戴與收藏。</p>
+              <a class="mini-cta" href="jade-buddha.html">瀏覽佛公系列</a>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <a class="gallery-visual peace-entry" href="jade-peace-buckle.html" aria-label="瀏覽平安扣玉器系列"><img src="assets/jade-peace-buckle-diamond.png" alt="緬甸A玉平安扣鑲18K金鑽石" loading="lazy"></a>
+            <div class="gallery-copy">
+              <h3>平安扣</h3>
+              <p>圓潤寓意平安，配鑲嵌工藝，適合日常佩戴。</p>
+              <a class="mini-cta" href="jade-peace-buckle.html">瀏覽平安扣系列</a>
             </div>
           </article>
           <article class="gallery-card">
@@ -1378,6 +1442,7 @@
             <div class="detail-row"><strong>Specialty</strong><span>Jade · Porcelain · Decor</span></div>
             <div class="detail-row"><strong>Inquiry</strong><span>WhatsApp Direct Message</span></div>
           </div>
+          <a class="map-link" href="https://share.google/t7lFieAMMerWySGwf" target="_blank" rel="noopener">Google Maps 導航到店</a>
           <figure class="shopfront-card">
             <img src="assets/shopfront-jenny-art-house.jpeg" alt="玲瓏藝舍 Jenny’s Art House 大埔店面" loading="lazy">
             <figcaption>玲瓏藝舍大埔店面，歡迎親臨挑選玉器、瓷器及家居擺設。</figcaption>
