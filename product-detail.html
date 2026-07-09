@@ -368,6 +368,59 @@
     const whatsappNumber = "85268036381";
 
     const products = {
+      "jade-heroic-plaque": {
+        name: "緬甸A玉英明神武",
+        price: "HK$ 28,000 | 請查詢",
+        intro: "神獸題材寓意威武守護，玉質溫潤，雕刻立體，適合佩戴或收藏。",
+        images: [
+          { src: "assets/jade-heroic-plaque-front.png", alt: "緬甸A玉英明神武正面", caption: "正面" },
+          { src: "assets/jade-heroic-plaque-side-1.png", alt: "緬甸A玉英明神武角度一", caption: "角度一" },
+          { src: "assets/jade-heroic-plaque-side-2.png", alt: "緬甸A玉英明神武角度二", caption: "角度二" }
+        ],
+        tags: ["緬甸A玉", "英明神武", "雕刻玉牌"],
+        details: [["價錢", "HK$ 28,000 | 請查詢"], ["尺寸", "約 52.3 x 35 x 13.8mm"], ["類別", "雕刻玉牌"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-pendants.html#products",
+        backText: "返回雕刻玉牌"
+      },
+      "jade-lotus-rise-plaque": {
+        name: "緬甸A玉鏤空雕刻一路蓮升",
+        price: "HK$ 28,800 | 請查詢",
+        intro: "鏤空蓮花題材，寓意步步高升，線條通透細緻，適合佩戴或收藏。",
+        images: [
+          { src: "assets/jade-lotus-rise-plaque-front.png", alt: "緬甸A玉鏤空雕刻一路蓮升正面", caption: "正面" },
+          { src: "assets/jade-lotus-rise-plaque-back.png", alt: "緬甸A玉鏤空雕刻一路蓮升背面", caption: "背面" }
+        ],
+        tags: ["緬甸A玉", "一路蓮升", "鏤空雕刻"],
+        details: [["價錢", "HK$ 28,800 | 請查詢"], ["尺寸", "約 46.5 x 32.7 x 8.8mm"], ["類別", "雕刻玉牌"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-pendants.html#products",
+        backText: "返回雕刻玉牌"
+      },
+      "jade-plum-five-blessings-plaque": {
+        name: "緬甸A玉梅開五福",
+        price: "HK$ 18,800 | 請查詢",
+        intro: "梅花五福題材，色澤清雅，雕工細膩，適合佩戴或收藏。",
+        images: [
+          { src: "assets/jade-plum-five-blessings-front.png", alt: "緬甸A玉梅開五福正面", caption: "正面" },
+          { src: "assets/jade-plum-five-blessings-back.png", alt: "緬甸A玉梅開五福背面", caption: "背面" }
+        ],
+        tags: ["緬甸A玉", "梅開五福", "雕刻玉牌"],
+        details: [["價錢", "HK$ 18,800 | 請查詢"], ["尺寸", "約 50.9 x 33.2 x 5.5mm"], ["類別", "雕刻玉牌"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-pendants.html#products",
+        backText: "返回雕刻玉牌"
+      },
+      "jade-happy-magpie-plaque": {
+        name: "緬甸A玉喜上眉梢",
+        price: "HK$ 39,800 | 請查詢",
+        intro: "喜鵲與梅枝題材，玉色清雅，雕工細緻，適合佩戴或收藏。",
+        images: [
+          { src: "assets/jade-happy-magpie-front.png", alt: "緬甸A玉喜上眉梢正面", caption: "正面" },
+          { src: "assets/jade-happy-magpie-back.png", alt: "緬甸A玉喜上眉梢背面", caption: "背面" }
+        ],
+        tags: ["緬甸A玉", "喜上眉梢", "雕刻玉牌"],
+        details: [["價錢", "HK$ 39,800 | 請查詢"], ["尺寸", "約 62 x 35.4 x 8.5mm"], ["類別", "雕刻玉牌"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-pendants.html#products",
+        backText: "返回雕刻玉牌"
+      },
       "jade-wealth-beast-pendant": {
         name: "緬甸A玉招財神獸",
         price: "HK$ 6,800 | 請查詢",
@@ -603,7 +656,7 @@
             <p class="desc">${escapeHtml(product.intro)}</p>
             <div class="meta">${tags}</div>
             <dl class="detail-list">${details}</dl>
-            <a class="whatsapp" href="${buildWhatsAppLink(message)}" target="_blank" rel="noopener">WhatsApp 查詢呢件</a>
+            <a class="whatsapp" href="${buildWhatsAppLink(message)}" target="_blank" rel="noopener">WhatsApp 查詢</a>
           </aside>
         </section>
       `;
@@ -613,8 +666,8 @@
       document.getElementById("main").innerHTML = `
         <section class="empty-state">
           <p class="eyebrow">Product Detail</p>
-          <h1>搵唔到呢件商品</h1>
-          <p>可能商品連結已更新，請返回分類頁重新選擇，或者直接 WhatsApp 查詢。</p>
+          <h1>找不到此商品</h1>
+          <p>可能商品連結已更新，請返回分類頁重新選擇，或直接 WhatsApp 查詢。</p>
           <a class="whatsapp" href="${buildWhatsAppLink("你好！我想查詢 Jenny's Art House 玲瓏藝舍的產品。")}" target="_blank" rel="noopener">WhatsApp 查詢</a>
         </section>
       `;
@@ -630,5 +683,6 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script src="assets/language-switcher.js"></script>
 </body>
 </html>
