@@ -616,20 +616,24 @@
       justify-content: center;
       min-height: 48px;
       padding: 12px 18px;
-      border: 1px solid rgba(38, 108, 80, .72);
+      border: 1px solid rgba(18, 67, 47, .95);
       border-radius: 999px;
-      background: var(--deep-green);
-      color: #fffaf0;
+      background: #174b36;
+      color: #fffaf0 !important;
       font-family: "Noto Sans TC", system-ui, sans-serif;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 12px 28px rgba(20, 49, 38, .18);
+      box-shadow: 0 12px 28px rgba(20, 49, 38, .24);
       transition: background .25s ease, border-color .25s ease, transform .25s ease;
     }
 
+    .map-link:visited {
+      color: #fffaf0 !important;
+    }
+
     .map-link:hover {
-      background: #1f5b43;
-      border-color: rgba(31, 91, 67, .9);
+      background: #103a2a;
+      border-color: rgba(16, 58, 42, 1);
       transform: translateY(-1px);
     }
 
@@ -971,16 +975,32 @@
       transform: scale(1.035);
     }
 
+    .gallery-card:hover .gallery-visual.buddha-entry img,
+    .gallery-card:hover .gallery-visual.peace-entry img,
+    .gallery-card:hover .gallery-visual.carved-entry img {
+      transform: none;
+    }
+
     .gallery-visual.ring-entry img {
       object-position: center 58%;
     }
 
     .gallery-visual.buddha-entry img {
-      object-position: center 82%;
+      object-fit: contain;
+      object-position: center center;
+      background: #050403;
     }
 
     .gallery-visual.peace-entry img {
-      object-position: center 84%;
+      object-fit: contain;
+      object-position: center center;
+      background: #050403;
+    }
+
+    .gallery-visual.carved-entry img {
+      object-fit: contain;
+      object-position: center center;
+      background: #050403;
     }
 
     .gallery-card.tall {
@@ -1025,12 +1045,10 @@
         min-height: 390px;
       }
 
-      .gallery-visual.buddha-entry img {
-        object-position: center 86%;
-      }
-
-      .gallery-visual.peace-entry img {
-        object-position: center 88%;
+      .gallery-visual.buddha-entry img,
+      .gallery-visual.peace-entry img,
+      .gallery-visual.carved-entry img {
+        object-position: center center;
       }
     }
   
@@ -1381,7 +1399,7 @@
             </div>
           </article>
           <article class="gallery-card">
-            <a class="gallery-visual" href="jade-pendants.html" aria-label="瀏覽雕刻玉牌系列"><img src="assets/jade-dragon-pendant.webp" alt="雕龍翡翠玉牌" loading="lazy"></a>
+            <a class="gallery-visual carved-entry" href="jade-pendants.html" aria-label="瀏覽雕刻玉牌系列"><img src="assets/jade-carved-plaque-entry.png" alt="黃翡雕刻玉牌" loading="lazy"></a>
             <div class="gallery-copy">
               <h3>雕刻玉牌</h3>
               <p>細看種水、色澤與雕工，感受玉石層次。</p>
