@@ -1289,6 +1289,142 @@
         width: 100%;
       }
     }
+  /* Softer handoff from the opening hero into the paper sections. */
+  .hero,
+  .home-hero,
+  .site-hero,
+  .intro-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .hero::after,
+  .home-hero::after,
+  .site-hero::after,
+  .intro-hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: clamp(260px, 32vw, 520px);
+    background:
+      linear-gradient(180deg,
+        rgba(244, 236, 214, 0) 0%,
+        rgba(244, 236, 214, 0.14) 24%,
+        rgba(244, 236, 214, 0.44) 54%,
+        rgba(244, 236, 214, 0.82) 82%,
+        rgba(244, 236, 214, 1) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero + section,
+  .home-hero + section,
+  .site-hero + section,
+  .intro-hero + section,
+  .hero + .section,
+  .home-hero + .section,
+  .site-hero + .section,
+  .intro-hero + .section,
+  #jade {
+    margin-top: -1px;
+  }
+
+  @media (max-width: 760px) {
+    .hero::after,
+    .home-hero::after,
+    .site-hero::after,
+    .intro-hero::after {
+      height: 340px;
+      background:
+        linear-gradient(180deg,
+          rgba(244, 236, 214, 0) 0%,
+          rgba(244, 236, 214, 0.18) 28%,
+          rgba(244, 236, 214, 0.56) 62%,
+          rgba(244, 236, 214, 0.92) 88%,
+          rgba(244, 236, 214, 1) 100%);
+    }
+  }
+</style>
+  <style>
+    /* Jenny soft handoff: blend the opening visual into the paper section. */
+    .hero,
+    .home-hero,
+    .site-hero,
+    .intro-hero,
+    .landing-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::after,
+    .home-hero::after,
+    .site-hero::after,
+    .intro-hero::after,
+    .landing-hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: clamp(320px, 34vw, 560px);
+      background:
+        linear-gradient(180deg,
+          rgba(244, 236, 214, 0) 0%,
+          rgba(244, 236, 214, 0.12) 22%,
+          rgba(244, 236, 214, 0.42) 52%,
+          rgba(244, 236, 214, 0.78) 78%,
+          rgba(244, 236, 214, 1) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    #jade {
+      position: relative;
+      margin-top: -1px;
+    }
+
+    #jade::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: clamp(180px, 22vw, 360px);
+      transform: translateY(-100%);
+      background:
+        linear-gradient(180deg,
+          rgba(244, 236, 214, 0) 0%,
+          rgba(244, 236, 214, 0.24) 35%,
+          rgba(244, 236, 214, 0.68) 72%,
+          rgba(244, 236, 214, 1) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @media (max-width: 760px) {
+      .hero::after,
+      .home-hero::after,
+      .site-hero::after,
+      .intro-hero::after,
+      .landing-hero::after {
+        height: 380px;
+        background:
+          linear-gradient(180deg,
+            rgba(244, 236, 214, 0) 0%,
+            rgba(244, 236, 214, 0.16) 24%,
+            rgba(244, 236, 214, 0.52) 58%,
+            rgba(244, 236, 214, 0.88) 86%,
+            rgba(244, 236, 214, 1) 100%);
+      }
+
+      #jade::before {
+        height: 260px;
+      }
+    }
   </style>
 </head>
 <body class="intro-active">

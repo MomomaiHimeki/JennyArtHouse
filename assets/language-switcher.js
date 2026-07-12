@@ -170,6 +170,232 @@
   const toChinese = Object.fromEntries(Object.entries(exact).map(([zh, en]) => [en, zh]));
   const reversePhrases = phrases.map(([zh, en]) => [en, zh]).reverse();
 
+  const commonLinkLabels = [
+    ["jade-necklaces.html", "翡翠吊墜", "Jade Pendants"],
+    ["jade-rings.html", "翡翠戒指", "Jade Rings"],
+    ["jade-buddha.html", "佛公", "Jade Buddha"],
+    ["jade-peace-buckle.html", "平安扣", "Peace Buckles"],
+    ["jade-pendants.html", "雕刻玉牌", "Carved Jade Plaques"],
+    ["blue-white-porcelain.html", "青花瓷器", "Blue & White Porcelain"],
+    ["porcelain-figures.html", "人物瓷像", "Porcelain Figures"],
+    ["#home", "首頁", "Home"],
+    ["#jade", "玉器", "Jade"],
+    ["#porcelain", "瓷器", "Porcelain"],
+    ["#visit", "到店", "Visit"],
+    ["#contact", "聯絡", "Contact"]
+  ];
+
+  const pageCopy = {
+    "index.html": {
+      zh: {
+        eyebrow: "大埔懷義街3號 · 玉器與瓷器",
+        title: "玲瓏藝舍<span>Jenny's Art House</span>",
+        lede: "玲瓏藝舍位於大埔，精選玉器、翡翠首飾、傳統瓷器及家居擺設，適合日常佩戴、收藏與送禮。",
+        jadeEyebrow: "Featured Jade",
+        jadeTitle: "玉質溫潤，適合佩戴與收藏。",
+        porcelainEyebrow: "Porcelain Collection",
+        porcelainTitle: "瓷器雅致，添上生活韻味。"
+      },
+      en: {
+        eyebrow: "3 Wai Yi Street, Tai Po · Jade and Porcelain",
+        title: "Ling Lung Art House<span>Jenny's Art House</span>",
+        lede: "Warm jade and luminous porcelain. Jenny's Art House is a physical shop in Tai Po, offering selected jade jewellery, traditional porcelain and home display pieces for modern living.",
+        jadeEyebrow: "Featured Jade",
+        jadeTitle: "Warm jade pieces for daily wear and collecting.",
+        porcelainEyebrow: "Porcelain Collection",
+        porcelainTitle: "Elegant porcelain for display, gifting and home styling."
+      }
+    },
+    "jade-necklaces.html": {
+      zh: {
+        eyebrow: "Jade Pendant Collection",
+        title: "翡翠吊墜系列",
+        lede: "翡翠吊墜、耳環及配套飾品可按色澤、鑲嵌工藝與佩戴場合挑選。網頁只作款式展示，實際貨況、尺寸及價錢以 WhatsApp 回覆為準。",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "逐件細覽。",
+        note: "有貨款式會優先顯示；已售款式會移到後方並標示「已售」，方便分辨現貨與參考款。"
+      },
+      en: {
+        eyebrow: "Jade Pendant Collection",
+        title: "Jade Pendant Collection",
+        lede: "Jade pendants, earrings and matching pieces can be selected by colour, setting and occasion. This page shows available styles; stock, measurements and prices are confirmed by WhatsApp.",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "Browse Each Piece.",
+        note: "Available pieces are shown first. Sold pieces are moved lower and marked as sold for easy reference."
+      }
+    },
+    "jade-rings.html": {
+      zh: {
+        eyebrow: "Jade Rings Collection",
+        title: "翡翠戒指系列",
+        lede: "多款翡翠、紫羅蘭與白冰鑲嵌戒指，每件可按實物狀態、尺寸與預算直接查詢。網頁只作款式展示，實際貨況以 WhatsApp 回覆為準。",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "逐件細覽。",
+        note: "有貨款式會優先顯示；已售款式會移到後方並標示「已售」，方便分辨現貨與參考款。"
+      },
+      en: {
+        eyebrow: "Jade Rings Collection",
+        title: "Jade Rings Collection",
+        lede: "Browse jade, lavender jade and icy jade rings. Each piece can be enquired about by condition, size and budget. Actual stock is confirmed by WhatsApp.",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "Browse Each Piece.",
+        note: "Available pieces are shown first. Sold pieces are moved lower and marked as sold for easy reference."
+      }
+    },
+    "jade-buddha.html": {
+      zh: {
+        eyebrow: "Jade Buddha Collection",
+        title: "佛公",
+        lede: "佛公玉器神態圓融，適合佩戴、收藏或送禮。每件款式均可 WhatsApp 查詢現貨、尺寸及價錢。",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "佛公玉器。",
+        note: "網站只作款式展示，實際貨況、尺寸及價錢以 WhatsApp 回覆為準。"
+      },
+      en: {
+        eyebrow: "Jade Buddha Collection",
+        title: "Jade Buddha",
+        lede: "Jade Buddha pieces carry a calm, rounded presence and are suitable for wearing, collecting or gifting. Stock, measurements and prices can be confirmed by WhatsApp.",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "Jade Buddha Pieces.",
+        note: "This page shows styles only. Actual stock, measurements and prices are confirmed by WhatsApp."
+      }
+    },
+    "jade-peace-buckle.html": {
+      zh: {
+        eyebrow: "Peace Buckle Collection",
+        title: "平安扣",
+        lede: "平安扣寓意圓滿平安，適合日常佩戴、收藏或送禮。每件款式均可 WhatsApp 查詢現貨、尺寸及價錢。",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "平安扣玉器。",
+        note: "網站只作款式展示，實際貨況、尺寸及價錢以 WhatsApp 回覆為準。"
+      },
+      en: {
+        eyebrow: "Peace Buckle Collection",
+        title: "Peace Buckles",
+        lede: "Peace buckles symbolise harmony and safety, suitable for daily wear, collecting or gifting. Stock, measurements and prices can be confirmed by WhatsApp.",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "Peace Buckle Pieces.",
+        note: "This page shows styles only. Actual stock, measurements and prices are confirmed by WhatsApp."
+      }
+    },
+    "jade-pendants.html": {
+      zh: {
+        eyebrow: "Carved Jade Plaque Collection",
+        title: "雕刻玉牌系列",
+        lede: "玉牌、吊墜與雕刻件可細看種水、色澤、雕工與寓意。網頁只作款式展示，實際貨況、尺寸及價錢以 WhatsApp 回覆為準。",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "逐件細覽。",
+        note: "點選商品圖片或商品資料可查看詳情；WhatsApp 按鈕會直接開啟查詢。"
+      },
+      en: {
+        eyebrow: "Carved Jade Plaque Collection",
+        title: "Carved Jade Plaque Collection",
+        lede: "Carved jade plaques and pendants can be viewed by translucency, colour, carving and symbolism. Stock, measurements and prices are confirmed by WhatsApp.",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "Browse Each Piece.",
+        note: "Tap the image or product information to view details. The WhatsApp button opens the enquiry directly."
+      }
+    },
+    "blue-white-porcelain.html": {
+      zh: {
+        eyebrow: "Blue & White Porcelain Collection",
+        title: "青花瓷器系列",
+        lede: "青花瓷器線條清雅，適合家居陳設、收藏或送禮。網頁只作款式展示，實際貨況、尺寸及價錢以 WhatsApp 回覆為準。",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "青花瓷器陳設。",
+        note: "點選商品圖片或商品資料可查看詳情；WhatsApp 按鈕會直接開啟查詢。"
+      },
+      en: {
+        eyebrow: "Blue & White Porcelain Collection",
+        title: "Blue & White Porcelain Collection",
+        lede: "Blue and white porcelain has a clean, graceful presence for home display, collecting or gifting. Stock, measurements and prices are confirmed by WhatsApp.",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "Blue & White Porcelain Display Pieces.",
+        note: "Tap the image or product information to view details. The WhatsApp button opens the enquiry directly."
+      }
+    },
+    "porcelain-figures.html": {
+      zh: {
+        eyebrow: "Porcelain Figures",
+        title: "人物瓷像系列",
+        lede: "從衣紋、釉色到神態，展示傳統人物瓷塑之美。適合家居陳設、茶席擺件及收藏送禮。",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "人物瓷像與擺設。",
+        note: "每件款式均可 WhatsApp 查詢現貨、尺寸及價錢。網頁只作展示，實際貨況以回覆為準。"
+      },
+      en: {
+        eyebrow: "Porcelain Figures",
+        title: "Porcelain Figure Collection",
+        lede: "From robe details and glaze colours to facial expression, these pieces show the beauty of traditional porcelain figures for display, tea settings and gifting.",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "Porcelain Figures and Displays.",
+        note: "Stock, measurements and prices can be confirmed by WhatsApp. This page is for display only; actual availability is based on our reply."
+      }
+    }
+  };
+
+  function normalizedPage() {
+    return (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  }
+
+  function setText(selector, value, root = document) {
+    const el = root.querySelector(selector);
+    if (el && value) el.textContent = value;
+  }
+
+  function setHTML(selector, value, root = document) {
+    const el = root.querySelector(selector);
+    if (el && value) el.innerHTML = value;
+  }
+
+  function applyCommonOverrides(lang) {
+    commonLinkLabels.forEach(([target, zh, en]) => {
+      document.querySelectorAll("a[href]").forEach((link) => {
+        if (link.querySelector("img, picture, video, svg")) return;
+        const href = link.getAttribute("href") || "";
+        if (href === target || href.endsWith("/" + target) || href.endsWith(target)) {
+          link.textContent = lang === "en" ? en : zh;
+        }
+      });
+    });
+
+    document.querySelectorAll(".js-whatsapp").forEach((link) => {
+      link.textContent = lang === "en" ? "WhatsApp Enquiry" : "WhatsApp 查詢";
+    });
+  }
+
+  function applyPageOverrides(lang) {
+    applyCommonOverrides(lang);
+    const copySet = pageCopy[normalizedPage()];
+    if (!copySet) return;
+    const copy = copySet[lang];
+    if (!copy) return;
+
+    if (normalizedPage() === "index.html") {
+      setText(".hero-copy .eyebrow", copy.eyebrow);
+      setHTML(".hero-copy h1", copy.title);
+      setText(".hero-copy .hero-lede", copy.lede);
+      const heads = document.querySelectorAll(".section-head");
+      if (heads[0]) {
+        setText(".eyebrow", copy.jadeEyebrow, heads[0]);
+        setText("h2", copy.jadeTitle, heads[0]);
+      }
+      if (heads[1]) {
+        setText(".eyebrow", copy.porcelainEyebrow, heads[1]);
+        setText("h2", copy.porcelainTitle, heads[1]);
+      }
+      return;
+    }
+
+    setText(".hero .eyebrow", copy.eyebrow);
+    setText(".hero h1", copy.title);
+    setText(".hero .lede", copy.lede);
+    setText(".hero-inner > p:not(.eyebrow)", copy.lede);
+    setText(".section-head .eyebrow", copy.sectionEyebrow);
+    setText(".section-head h2", copy.sectionTitle);
+    setText(".section-head .note", copy.note);
+  }
+
   function injectStyles() {
     if (document.getElementById("language-switcher-style")) return;
     const style = document.createElement("style");
@@ -186,6 +412,7 @@
         background: rgba(255, 251, 240, .9);
         box-shadow: 0 6px 18px rgba(62, 43, 20, .08);
         flex-shrink: 0;
+        z-index: 50;
       }
 
       .language-switcher button {
@@ -206,13 +433,19 @@
 
       @media (max-width: 760px) {
         .language-switcher {
-          order: 1;
-          margin-left: 0;
-          margin-right: auto;
+          position: fixed;
+          top: calc(env(safe-area-inset-top, 0px) + 96px);
+          right: 10px;
+          margin: 0;
+          background: rgba(255, 251, 240, .96);
+          border-color: rgba(155, 43, 37, .42);
+          box-shadow: 0 10px 26px rgba(20, 17, 13, .18);
+          z-index: 1200;
         }
 
         .language-switcher button {
-          padding: 7px 9px;
+          padding: 8px 10px;
+          font-size: 12px;
         }
       }
     `;
@@ -277,6 +510,8 @@
       });
     });
 
+    applyPageOverrides(lang);
+
     document.querySelectorAll(".language-switcher button").forEach((button) => {
       button.setAttribute("aria-pressed", button.dataset.lang === lang ? "true" : "false");
     });
@@ -295,6 +530,8 @@
       <button type="button" data-lang="zh">中文</button>
       <button type="button" data-lang="en">EN</button>
     `;
+
+    switcher.querySelector('[data-lang="zh"]').textContent = "中文";
 
     switcher.addEventListener("click", (event) => {
       const button = event.target.closest("button[data-lang]");
