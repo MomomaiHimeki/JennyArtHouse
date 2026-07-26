@@ -59,14 +59,28 @@
   controls.className = "catalog-controls";
   controls.setAttribute("aria-label", "產品價格篩選");
   controls.innerHTML = `
-    <div class="catalog-controls__topline">
-      <h2 class="catalog-controls__title"></h2>
-      <p class="catalog-controls__sort"></p>
+    <button class="catalog-controls__toggle" type="button" aria-expanded="false" aria-controls="catalog-price-panel">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 7h10"></path>
+        <path d="M18 7h2"></path>
+        <circle cx="16" cy="7" r="2"></circle>
+        <path d="M4 17h2"></path>
+        <path d="M10 17h10"></path>
+        <circle cx="8" cy="17" r="2"></circle>
+      </svg>
+    </button>
+    <div class="catalog-controls__panel" id="catalog-price-panel" hidden>
+      <div class="catalog-controls__topline">
+        <h2 class="catalog-controls__title"></h2>
+        <p class="catalog-controls__sort"></p>
+      </div>
+      <div class="catalog-controls__options" role="group"></div>
+      <p class="catalog-controls__status" aria-live="polite"></p>
     </div>
-    <div class="catalog-controls__options" role="group"></div>
-    <p class="catalog-controls__status" aria-live="polite"></p>
   `;
 
+  const toggle = controls.querySelector(".catalog-controls__toggle");
+  const panel = controls.querySelector(".catalog-controls__panel");
   const options = controls.querySelector(".catalog-controls__options");
   const title = controls.querySelector(".catalog-controls__title");
   const sortNote = controls.querySelector(".catalog-controls__sort");
@@ -138,12 +152,34 @@
       ? `Showing ${visibleCount} product${visibleCount === 1 ? "" : "s"} · high to low`
       : `顯示 ${visibleCount} 件產品・由高至低`;
     controls.setAttribute("aria-label", english ? "Filter products by price" : "按價格篩選產品");
+    const panelOpen = !panel.hidden;
+    toggle.setAttribute(
+      "aria-label",
+      english
+        ? `${panelOpen ? "Close" : "Open"} price filter`
+        : `${panelOpen ? "關閉" : "開啟"}價格篩選`
+    );
+    toggle.title = english ? "Price filter" : "價格篩選";
 
     filters.forEach((filter) => {
       const button = options.querySelector(`[data-filter="${filter.key}"]`);
       button.textContent = `${filterLabel(filter, english)} (${filter.count})`;
     });
   }
+
+  function setPanelOpen(open) {
+    panel.hidden = !open;
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    refreshText();
+  }
+
+  function closePanel() {
+    setPanelOpen(false);
+  }
+
+  toggle.addEventListener("click", () => {
+    setPanelOpen(panel.hidden);
+  });
 
   options.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-filter]");
@@ -157,12 +193,22 @@
     options.querySelectorAll("button").forEach((option) => {
       option.setAttribute("aria-pressed", option === button ? "true" : "false");
     });
+    toggle.classList.toggle("has-active-filter", activeFilter !== "all");
     refreshText();
+    if (window.matchMedia("(max-width: 640px)").matches) closePanel();
   });
 
   document.addEventListener("click", (event) => {
+    if (!controls.contains(event.target)) closePanel();
     if (event.target.closest(".language-switcher button[data-lang]")) {
       window.setTimeout(refreshText, 0);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closePanel();
+      toggle.focus();
     }
   });
 
