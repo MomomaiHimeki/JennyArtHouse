@@ -1,0 +1,113 @@
+.catalog-controls {
+  margin: 0 0 24px;
+  padding: 16px 18px;
+  border: 1px solid var(--line, rgba(20, 17, 13, .14));
+  border-radius: 18px;
+  background: rgba(248, 240, 223, .76);
+  box-shadow: 0 12px 34px rgba(23, 18, 14, .08);
+}
+
+.catalog-controls__topline {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.catalog-controls__title {
+  margin: 0;
+  color: var(--ink, #14110d);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.catalog-controls__sort {
+  margin: 0;
+  color: #76624b;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.catalog-controls__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.catalog-controls__button {
+  appearance: none;
+  min-height: 40px;
+  padding: 8px 15px;
+  border: 1px solid rgba(152, 45, 38, .24);
+  border-radius: 999px;
+  background: rgba(255, 250, 239, .86);
+  color: #8e2c26;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+}
+
+.catalog-controls__button:hover,
+.catalog-controls__button:focus-visible {
+  border-color: var(--cinnabar, #982d26);
+  transform: translateY(-1px);
+}
+
+.catalog-controls__button:focus-visible {
+  outline: 3px solid rgba(152, 45, 38, .2);
+  outline-offset: 2px;
+}
+
+.catalog-controls__button[aria-pressed="true"] {
+  border-color: var(--cinnabar, #982d26);
+  background: var(--cinnabar, #982d26);
+  color: #fffaf0;
+}
+
+.catalog-controls__status {
+  margin: 11px 0 0;
+  color: #76624b;
+  font-size: 13px;
+}
+
+.product-grid > .product[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .catalog-controls {
+    margin-bottom: 18px;
+    padding: 14px 12px;
+    border-radius: 15px;
+  }
+
+  .catalog-controls__topline {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .catalog-controls__sort {
+    margin-top: 4px;
+    white-space: normal;
+  }
+
+  .catalog-controls__options {
+    flex-wrap: nowrap;
+    margin-inline: -12px;
+    padding: 2px 12px 6px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .catalog-controls__button {
+    flex: 0 0 auto;
+    min-height: 42px;
+  }
+}
