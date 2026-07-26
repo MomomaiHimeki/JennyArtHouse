@@ -76,6 +76,7 @@
     "歡迎到大埔店親自挑選。": "Visit our Tai Po shop to choose pieces in person.",
     "正面": "Front",
     "背面": "Back",
+    "斜角": "Angled view",
     "角度一": "Angle 1",
     "角度二": "Angle 2",
     "價錢": "Price",
