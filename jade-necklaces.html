@@ -391,6 +391,7 @@
       <a href="jade-necklaces.html" aria-current="page">翡翠吊墜</a>
       <a href="jade-rings.html">翡翠戒指</a>
       <a href="jade-buddha.html">佛公</a>
+      <a href="jade-buddha-guanyin.html">觀音</a>
       <a href="jade-peace-buckle.html">平安扣</a>
       <a href="jade-pendants.html">雕刻玉牌</a>
       <a href="blue-white-porcelain.html">青花瓷器</a>
@@ -421,6 +422,20 @@
       </div>
 
       <div class="product-grid">
+        <article class="product">
+          <a class="product-image" href="product-detail.html?id=jade-lavender-drop-diamond-pendant" aria-label="查看緬甸A玉鑲18K金加鑽石詳情">
+            <img src="assets/jade-lavender-drop-diamond-front.png" alt="緬甸A玉鑲18K金加鑽石正面" loading="eager">
+            <span class="badge">紫羅蘭水滴吊墜</span>
+          </a>
+          <div class="product-body">
+            <h3 class="product-title">緬甸A玉鑲18K金加鑽石</h3>
+            <p class="price">HK$ 12,000 | 請查詢</p>
+            <p class="desc">紫羅蘭水滴形翡翠配翠綠頂飾，以18K金及鑽石鑲嵌，尺寸約 32.2 x 17.9 x 10.8mm。</p>
+            <div class="meta"><span>緬甸A玉</span><span>18K金鑽石</span></div>
+            <div class="product-actions"><a class="whatsapp js-whatsapp" href="#" data-message="你好！我想查詢「緬甸A玉鑲18K金加鑽石」32.2 x 17.9 x 10.8mm 款的現貨和價錢。">WhatsApp 查詢</a></div>
+          </div>
+        </article>
+
         <article class="product">
           <a class="product-image" href="product-detail.html?id=jade-teardrop-pendant" aria-label="查看緬甸A玉鑲18K金鑽石翡翠吊墜詳情">
             <img src="assets/jade-teardrop-pendant.jpeg" alt="緬甸A玉鑲18K金鑽石翡翠吊墜" loading="lazy">
@@ -474,7 +489,8 @@
 
     const pinnedProducts = [
       "jade-teardrop-pendant",
-      "jade-carved-gourd-pendant"
+      "jade-carved-gourd-pendant",
+      "jade-lavender-drop-diamond-pendant"
     ];
     const productGrid = document.querySelector(".product-grid");
     pinnedProducts.slice().reverse().forEach((id) => {

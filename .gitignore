@@ -1,0 +1,15 @@
+# Local working-copy notes and private conversation exports
+WORKING_LOCATION.txt
+website_conversation_history_hits.txt
+
+# Generated hand-off archives
+jennyarthouse-site.zip
+
+# Preserved local source images that are not used by the live site
+assets/jade-ruyi-plaque-front.png
+assets/jade-ruyi-plaque-back.png
+assets/生成圖片 2.png
+
+# Local OS metadata
+.DS_Store
+Thumbs.db

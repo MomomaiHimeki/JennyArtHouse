@@ -752,6 +752,11 @@
         grid-column: span 2;
       }
 
+      .jade-grid .gallery-card.carved-card {
+        grid-column: span 3;
+        min-height: 420px;
+      }
+
       .about-grid {
         grid-template-columns: 1fr .82fr;
       }
@@ -975,12 +980,6 @@
       transform: scale(1.035);
     }
 
-    .gallery-card:hover .gallery-visual.buddha-entry img,
-    .gallery-card:hover .gallery-visual.peace-entry img,
-    .gallery-card:hover .gallery-visual.carved-entry img {
-      transform: none;
-    }
-
     .gallery-visual.ring-entry img {
       object-position: center 58%;
     }
@@ -998,6 +997,16 @@
     }
 
     .gallery-visual.carved-entry img {
+      position: absolute;
+      inset: 0;
+      object-fit: contain;
+      object-position: center center;
+      background: #050403;
+    }
+
+    .gallery-visual.guanyin-entry img {
+      position: absolute;
+      inset: 0;
       object-fit: contain;
       object-position: center center;
       background: #050403;
@@ -1043,6 +1052,11 @@
       .gallery-card,
       .gallery-card.tall {
         min-height: 390px;
+      }
+
+      .gallery-card.figure-card {
+        min-height: 0;
+        aspect-ratio: 3 / 4;
       }
 
       .gallery-visual.buddha-entry img,
@@ -1289,67 +1303,9 @@
         width: 100%;
       }
     }
-  /* Softer handoff from the opening hero into the paper sections. */
-  .hero,
-  .home-hero,
-  .site-hero,
-  .intro-hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-  }
-
-  .hero::after,
-  .home-hero::after,
-  .site-hero::after,
-  .intro-hero::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1px;
-    height: clamp(260px, 32vw, 520px);
-    background:
-      linear-gradient(180deg,
-        rgba(244, 236, 214, 0) 0%,
-        rgba(244, 236, 214, 0.14) 24%,
-        rgba(244, 236, 214, 0.44) 54%,
-        rgba(244, 236, 214, 0.82) 82%,
-        rgba(244, 236, 214, 1) 100%);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .hero + section,
-  .home-hero + section,
-  .site-hero + section,
-  .intro-hero + section,
-  .hero + .section,
-  .home-hero + .section,
-  .site-hero + .section,
-  .intro-hero + .section,
-  #jade {
-    margin-top: -1px;
-  }
-
-  @media (max-width: 760px) {
-    .hero::after,
-    .home-hero::after,
-    .site-hero::after,
-    .intro-hero::after {
-      height: 340px;
-      background:
-        linear-gradient(180deg,
-          rgba(244, 236, 214, 0) 0%,
-          rgba(244, 236, 214, 0.18) 28%,
-          rgba(244, 236, 214, 0.56) 62%,
-          rgba(244, 236, 214, 0.92) 88%,
-          rgba(244, 236, 214, 1) 100%);
-    }
-  }
 </style>
   <style>
-    /* Jenny soft handoff: blend the opening visual into the paper section. */
+    /* Seamless handoff: fade the shared paper texture over the opening visual. */
     .hero,
     .home-hero,
     .site-hero,
@@ -1371,15 +1327,39 @@
       right: 0;
       bottom: -1px;
       height: clamp(320px, 34vw, 560px);
-      background:
-        linear-gradient(180deg,
-          rgba(244, 236, 214, 0) 0%,
-          rgba(244, 236, 214, 0.12) 22%,
-          rgba(244, 236, 214, 0.42) 52%,
-          rgba(244, 236, 214, 0.78) 78%,
-          rgba(244, 236, 214, 1) 100%);
+      background-color: #efe3c7;
+      background-image:
+        linear-gradient(rgba(247, 241, 226, .72), rgba(247, 241, 226, .72)),
+        url("assets/rice-paper-texture.webp");
+      background-repeat: repeat;
+      background-size: auto, 1800px auto;
+      background-position: center, center;
+      background-attachment: scroll, fixed;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .12) 22%, rgba(0, 0, 0, .44) 52%, rgba(0, 0, 0, .8) 80%, #000 100%);
+      mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .12) 22%, rgba(0, 0, 0, .44) 52%, rgba(0, 0, 0, .8) 80%, #000 100%);
       pointer-events: none;
       z-index: 2;
+    }
+
+    #jade,
+    .about-band,
+    #visit,
+    #contact {
+      background-color: rgba(239, 227, 199, .9);
+      background-image:
+        linear-gradient(rgba(247, 241, 226, .72), rgba(247, 241, 226, .72)),
+        url("assets/rice-paper-texture.webp");
+      background-repeat: repeat;
+      background-size: auto, 1800px auto;
+      background-position: center, center;
+      background-attachment: scroll, fixed;
+    }
+
+    #jade,
+    #porcelain,
+    #visit,
+    #contact {
+      border-top: 0;
     }
 
     #jade {
@@ -1387,42 +1367,49 @@
       margin-top: -1px;
     }
 
-    #jade::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: clamp(180px, 22vw, 360px);
-      transform: translateY(-100%);
-      background:
-        linear-gradient(180deg,
-          rgba(244, 236, 214, 0) 0%,
-          rgba(244, 236, 214, 0.24) 35%,
-          rgba(244, 236, 214, 0.68) 72%,
-          rgba(244, 236, 214, 1) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
     @media (max-width: 760px) {
+      .site-header {
+        display: block;
+      }
+
+      .nav {
+        justify-content: flex-start;
+        gap: 16px;
+        width: 100%;
+        min-height: 64px;
+        overflow-x: auto;
+        padding: 8px max(12px, env(safe-area-inset-left)) 8px max(12px, env(safe-area-inset-right));
+        scrollbar-width: none;
+        overscroll-behavior-x: contain;
+      }
+
+      .nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .brand,
+      .site-header .cta {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+
+      .nav-links {
+        display: flex;
+        flex: 0 0 auto;
+        gap: 18px;
+        white-space: nowrap;
+      }
+
+      .hero {
+        padding-top: 64px;
+      }
+
       .hero::after,
       .home-hero::after,
       .site-hero::after,
       .intro-hero::after,
       .landing-hero::after {
         height: 380px;
-        background:
-          linear-gradient(180deg,
-            rgba(244, 236, 214, 0) 0%,
-            rgba(244, 236, 214, 0.16) 24%,
-            rgba(244, 236, 214, 0.52) 58%,
-            rgba(244, 236, 214, 0.88) 86%,
-            rgba(244, 236, 214, 1) 100%);
-      }
-
-      #jade::before {
-        height: 260px;
       }
     }
   </style>
@@ -1448,6 +1435,7 @@
         <a href="jade-necklaces.html">翡翠吊墜</a>
         <a href="jade-rings.html">翡翠戒指</a>
         <a href="jade-buddha.html">佛公</a>
+        <a href="jade-buddha-guanyin.html">觀音</a>
         <a href="jade-peace-buckle.html">平安扣</a>
         <a href="jade-pendants.html">雕刻玉牌</a>
         <a href="blue-white-porcelain.html">青花瓷器</a>
@@ -1460,15 +1448,6 @@
         聯絡我們
       </a>
     </nav>
-    <div class="category-shortcuts" aria-label="商品分類捷徑">
-      <a href="jade-necklaces.html">翡翠吊墜</a>
-      <a href="jade-rings.html">翡翠戒指</a>
-      <a href="jade-buddha.html">佛公</a>
-      <a href="jade-peace-buckle.html">平安扣</a>
-      <a href="jade-pendants.html">雕刻玉牌</a>
-      <a href="blue-white-porcelain.html">青花瓷器</a>
-      <a href="porcelain-figures.html">人物瓷像</a>
-    </div>
   </header>
 
   <main id="home">
@@ -1535,6 +1514,14 @@
             </div>
           </article>
           <article class="gallery-card">
+            <a class="gallery-visual guanyin-entry" href="jade-buddha-guanyin.html" aria-label="瀏覽觀音玉器系列"><img src="assets/jade-child-giving-guanyin-diamond.png" alt="緬甸A玉送子觀音鑲18K金加鑽石" loading="lazy"></a>
+            <div class="gallery-copy">
+              <h3>觀音</h3>
+              <p>觀音雕工莊雅，寓意慈悲護佑，適合佩戴與收藏。</p>
+              <a class="mini-cta" href="jade-buddha-guanyin.html">瀏覽觀音系列</a>
+            </div>
+          </article>
+          <article class="gallery-card carved-card">
             <a class="gallery-visual carved-entry" href="jade-pendants.html" aria-label="瀏覽雕刻玉牌系列"><img src="assets/jade-carved-plaque-entry.png" alt="黃翡雕刻玉牌" loading="lazy"></a>
             <div class="gallery-copy">
               <h3>雕刻玉牌</h3>
@@ -1570,7 +1557,7 @@
               <a class="mini-cta js-whatsapp" href="#" data-message="你好！我想查詢玲瓏藝舍的彩瓷茶具。">查詢茶具</a>
             </div>
           </article>
-          <article class="gallery-card">
+          <article class="gallery-card figure-card">
             <a class="gallery-visual" href="porcelain-figures.html" aria-label="瀏覽人物瓷像系列"><img src="assets/porcelain-figure-blue.webp" alt="藍袍傳統人物瓷像" loading="lazy"></a>
             <div class="gallery-copy">
               <h3>人物瓷像</h3>

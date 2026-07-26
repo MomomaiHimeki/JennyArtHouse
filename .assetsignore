@@ -1,0 +1,9 @@
+.git
+.git/**
+.wrangler
+.wrangler/**
+.assetsignore
+website_conversation_history_hits.txt
+jennyarthouse-site.zip
+WORKING_LOCATION.txt
+wrangler.jsonc
