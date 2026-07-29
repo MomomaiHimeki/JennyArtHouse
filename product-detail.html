@@ -296,15 +296,27 @@
 
     @media (max-width: 760px) {
       .nav {
-        align-items: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
         min-height: 64px;
         padding: 10px 0;
       }
 
-      .nav-actions {
-        gap: 6px;
-        font-size: .76rem;
+      .brand {
+        flex: 1 1 auto;
       }
+
+      .nav-actions {
+        flex: 1 0 100%;
+        max-width: 100%;
+        gap: 6px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        font-size: .76rem;
+        scrollbar-width: none;
+      }
+
+      .nav-actions::-webkit-scrollbar { display: none; }
 
       .nav-link,
       .whatsapp {
@@ -419,6 +431,19 @@
         ],
         tags: ["緬甸A玉", "福到如意", "雕刻玉牌"],
         details: [["價錢", "HK$ 7,500 | 請查詢"], ["尺寸", "約 45.8 x 39.7 x 4.4mm"], ["類別", "雕刻玉牌"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-pendants.html#products",
+        backText: "返回雕刻玉牌"
+      },
+      "jade-zhidaolin-crane-plaque": {
+        name: "緬甸A玉支道林與鶴",
+        price: "HK$ 18,000 | 請查詢",
+        intro: "白玉飄翠圓牌雕刻支道林與鶴題材，人物與仙鶴紋飾相映，適合佩戴或收藏。",
+        images: [
+          { src: "assets/jade-zhidaolin-crane-plaque-front.webp", alt: "緬甸A玉支道林與鶴正面", caption: "正面" },
+          { src: "assets/jade-zhidaolin-crane-plaque-back.webp", alt: "緬甸A玉支道林與鶴背面", caption: "背面" }
+        ],
+        tags: ["緬甸A玉", "支道林與鶴", "雕刻玉牌"],
+        details: [["價錢", "HK$ 18,000 | 請查詢"], ["尺寸", "63.1 x 59.8 x 4.7mm"], ["類別", "雕刻玉牌"], ["查詢", "WhatsApp 6803 6381"]],
         backHref: "jade-pendants.html#products",
         backText: "返回雕刻玉牌"
       },

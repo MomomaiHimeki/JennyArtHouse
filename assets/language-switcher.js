@@ -22,6 +22,7 @@
     "觀音玉器。": "Guanyin Pieces.",
     "觀音玉器": "Guanyin Jade",
     "觀音題材": "Guanyin Design",
+    "緬甸A玉": "Burmese Type A Jade",
     "平安扣": "Peace Buckles",
     "平安扣玉器。": "Peace Buckle Pieces.",
     "雕刻玉牌": "Carved Jade Plaques",
@@ -122,6 +123,10 @@
     "福到如意": "Fortune and Ruyi",
     "翠色柔和，蝙蝠配如意紋雕刻，寓意福到如意，尺寸約 45.8 x 39.7 x 4.4mm。": "Soft green jade with a carved bat and Ruyi motifs, symbolising the arrival of fortune and fulfilment. Approx. 45.8 x 39.7 x 4.4mm.",
     "翠色柔和，蝙蝠配如意紋雕刻，寓意福到如意，適合佩戴或收藏。": "Soft green jade with a carved bat and Ruyi motifs symbolising the arrival of fortune and fulfilment, suitable for wearing or collecting.",
+    "緬甸A玉支道林與鶴": "Burmese Type A Jade Zhi Daolin and Crane Plaque",
+    "支道林與鶴": "Zhi Daolin and Crane",
+    "白玉飄翠圓牌雕刻支道林與鶴題材，人物與仙鶴紋飾相映，尺寸 63.1 x 59.8 x 4.7mm。": "A pale jade round plaque with green accents, carved with Zhi Daolin and a crane. 63.1 x 59.8 x 4.7mm.",
+    "白玉飄翠圓牌雕刻支道林與鶴題材，人物與仙鶴紋飾相映，適合佩戴或收藏。": "This pale jade round plaque with green accents depicts Zhi Daolin and a crane, suitable for wearing or collecting.",
     "緬甸A玉春帶彩貔貅一對": "Burmese Type A Spring-Tone Jade Pixiu Pair",
     "貔貅一對": "Pixiu Pair",
     "展示一": "View 1",
@@ -262,6 +267,7 @@
   ];
 
   const toChinese = Object.fromEntries(Object.entries(exact).map(([zh, en]) => [en, zh]));
+  toChinese["WhatsApp Enquiry"] = "WhatsApp 查詢";
   const reversePhrases = phrases.map(([zh, en]) => [en, zh]).reverse();
 
   const commonLinkLabels = [
