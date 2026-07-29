@@ -111,6 +111,25 @@
       font-weight: 750;
     }
 
+    .whatsapp.is-sold,
+    .sold-button {
+      border-color: rgba(20, 17, 13, .12);
+      color: rgba(20, 17, 13, .58);
+      background: rgba(20, 17, 13, .12);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .sold-button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      font-weight: 800;
+    }
+
     .category-shortcuts {
       display: flex;
       gap: 8px;
@@ -737,14 +756,15 @@
       },
       "jade-bamboo-peace-plaque": {
         name: "緬甸A玉竹報平安",
-        price: "HK$ 1,380 | 請查詢",
+        price: "HK$ 已售",
+        sold: true,
         intro: "竹節造型配竹葉雕紋，黃翡色澤溫潤，寓意竹報平安，適合佩戴或收藏。",
         images: [
           { src: "assets/jade-bamboo-peace-front.webp", alt: "緬甸A玉竹報平安正面", caption: "正面" },
           { src: "assets/jade-bamboo-peace-back.webp", alt: "緬甸A玉竹報平安背面", caption: "背面" }
         ],
         tags: ["緬甸A玉", "竹報平安", "雕刻玉牌"],
-        details: [["價錢", "HK$ 1,380 | 請查詢"], ["尺寸", "約 41.8 x 19.2 x 12.9mm"], ["類別", "雕刻玉牌"], ["查詢", "WhatsApp 6803 6381"]],
+        details: [["價錢", "HK$ 已售"], ["尺寸", "約 41.8 x 19.2 x 12.9mm"], ["類別", "雕刻玉牌"]],
         backHref: "jade-pendants.html#products",
         backText: "返回雕刻玉牌"
       },
@@ -1133,6 +1153,7 @@
     }
 
     function renderProduct(product) {
+      const isSold = product.sold === true;
       const mainImage = product.images[0];
       const galleryStrip = product.images.map((image, index) => `
         <figure>
@@ -1157,7 +1178,17 @@
       document.querySelector("meta[name='description']").content = `${product.name}，Jenny's Art House 玲瓏藝舍商品詳情、相片、尺寸、價錢及 WhatsApp 查詢。`;
       document.getElementById("backLink").href = product.backHref;
       document.getElementById("backLink").textContent = product.backText;
-      document.getElementById("topWhatsApp").href = buildWhatsAppLink(message);
+      const topWhatsApp = document.getElementById("topWhatsApp");
+      if (isSold) {
+        topWhatsApp.removeAttribute("href");
+        topWhatsApp.removeAttribute("target");
+        topWhatsApp.textContent = "已售出";
+        topWhatsApp.classList.remove("js-whatsapp");
+        topWhatsApp.classList.add("is-sold");
+        topWhatsApp.setAttribute("aria-disabled", "true");
+      } else {
+        topWhatsApp.href = buildWhatsAppLink(message);
+      }
 
       document.getElementById("main").innerHTML = `
         <section class="product-hero" aria-label="${escapeHtml(product.name)}商品詳情">
@@ -1175,7 +1206,9 @@
             <p class="desc">${escapeHtml(product.intro)}</p>
             <div class="meta">${tags}</div>
             <dl class="detail-list">${details}</dl>
-            <a class="whatsapp" href="${buildWhatsAppLink(message)}" target="_blank" rel="noopener">WhatsApp 查詢</a>
+            ${isSold
+              ? '<span class="sold-button">已售出</span>'
+              : `<a class="whatsapp" href="${buildWhatsAppLink(message)}" target="_blank" rel="noopener">WhatsApp 查詢</a>`}
           </aside>
         </section>
       `;
