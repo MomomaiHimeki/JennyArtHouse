@@ -159,7 +159,7 @@
     "女媧練石補青天題材，黃翡、白玉與翠色相映，人物與祥雲雕工立體細緻，適合佩戴或收藏。": "A finely detailed Nuwa Mends the Sky carving with yellow, white and green jade tones, suitable for wearing or collecting.",
     "緬甸A玉圓牌": "Burmese Type A Jade Round Plaque",
     "圓牌": "Round Plaque",
-    "圓牌造型簡潔飽滿，玉色清雅，表面打磨溫潤，尺寸約 54.4 x 5.4mm。": "A clean, well-proportioned round plaque in pale jade with a smooth polished finish. Approx. 54.4 x 5.4mm.",
+    "圓牌造型簡潔飽滿，玉色清雅，表面打磨溫潤，尺寸約 53.9 x 5.3mm。": "A clean, well-proportioned round plaque in pale jade with a smooth polished finish. Approx. 53.9 x 5.3mm.",
     "圓牌造型簡潔飽滿，玉色清雅，表面打磨溫潤，適合佩戴或收藏。": "A clean, well-proportioned round plaque in pale jade with a smooth polished finish, suitable for wearing or collecting.",
     "緬甸A玉關公": "Burmese Type A Jade Guan Gong Plaque",
     "關公": "Guan Gong",
