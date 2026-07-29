@@ -425,7 +425,7 @@
       "jade-dragon-plaque-8500": {
         name: "緬甸A玉龍牌",
         price: "HK$ 8,500 | 請查詢",
-        intro: "白玉飄翠，橢圓龍牌配鏤空雕刻，龍紋層次清晰，適合佩戴或收藏。",
+        intro: "白玉飄翠，橢圓龍牌龍紋層次清晰，適合佩戴或收藏。",
         images: [
           { src: "assets/jade-dragon-plaque-8500-front.webp", alt: "緬甸A玉龍牌 49.9mm 款正面", caption: "正面" },
           { src: "assets/jade-dragon-plaque-8500-back.webp", alt: "緬甸A玉龍牌 49.9mm 款背面", caption: "背面" }
@@ -438,7 +438,7 @@
       "jade-ancient-grain-harvest-dragon": {
         name: "緬甸A玉古谷紋五谷豐登龍",
         price: "HK$ 45,000 | 請查詢",
-        intro: "黃翡圓牌配白玉龍紋，古谷紋與五谷豐登題材寓意豐足吉祥，適合佩戴或收藏。",
+        intro: "黃翡圓牌巧色龍，古谷紋與五谷豐登題材寓意豐足吉祥，適合佩戴或收藏。",
         images: [
           { src: "assets/jade-ancient-grain-harvest-dragon-front.webp", alt: "緬甸A玉古谷紋五谷豐登龍正面", caption: "正面" },
           { src: "assets/jade-ancient-grain-harvest-dragon-back.webp", alt: "緬甸A玉古谷紋五谷豐登龍背面", caption: "背面" }
@@ -666,6 +666,20 @@
         ],
         tags: ["緬甸A玉", "紫羅蘭", "觀音"],
         details: [["價錢", "HK$ 2,800 | 請查詢"], ["尺寸", "約 57.8 x 39.8 x 11mm"], ["類別", "觀音玉器"], ["查詢", "WhatsApp 6803 6381"]],
+        backHref: "jade-buddha-guanyin.html#products",
+        backText: "返回觀音"
+      },
+      "jade-lavender-guanyin-4800": {
+        name: "緬甸A玉紫羅蘭觀音",
+        enquiryLabel: "緬甸A玉紫羅蘭觀音（54.6 x 30.4 x 6.2mm，HK$ 4,800）",
+        price: "HK$ 4,800 | 請查詢",
+        intro: "紫羅蘭色澤柔和，觀音雕像端莊，寓意慈悲護佑，適合佩戴或收藏。",
+        images: [
+          { src: "assets/jade-lavender-guanyin-4800-front.webp", alt: "緬甸A玉紫羅蘭觀音正面", caption: "正面" },
+          { src: "assets/jade-lavender-guanyin-4800-back.webp", alt: "緬甸A玉紫羅蘭觀音背面", caption: "背面" }
+        ],
+        tags: ["緬甸A玉", "紫羅蘭", "觀音"],
+        details: [["價錢", "HK$ 4,800 | 請查詢"], ["尺寸", "54.6 x 30.4 x 6.2mm"], ["類別", "觀音玉器"], ["查詢", "WhatsApp 6803 6381"]],
         backHref: "jade-buddha-guanyin.html#products",
         backText: "返回觀音"
       },
@@ -1045,7 +1059,7 @@
       `).join("");
 
       const tags = product.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
-      const message = `你好！我想查詢「${product.name}」的現貨、尺寸和價錢。`;
+      const message = `你好！我想查詢「${product.enquiryLabel || product.name}」的現貨、尺寸和價錢。`;
 
       document.title = `${product.name} | Jenny's Art House 玲瓏藝舍`;
       document.querySelector("meta[name='description']").content = `${product.name}，Jenny's Art House 玲瓏藝舍商品詳情、相片、尺寸、價錢及 WhatsApp 查詢。`;
