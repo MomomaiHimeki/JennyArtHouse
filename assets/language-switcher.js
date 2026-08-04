@@ -105,6 +105,12 @@
 
     "緬甸A玉鑲18K金鑽石翡翠吊墜": "Burmese Type A Jade 18K Gold Diamond Pendant",
     "緬甸A玉鑲18K金鑽石翡翠荷葉吊墜": "Burmese Type A Jade 18K Gold Diamond Lotus Leaf Pendant",
+    "緬甸A玉鑲18K金鑽石翡翠荷葉吊墜正面": "Burmese Type A Jade 18K Gold Diamond Lotus Leaf Pendant Front",
+    "緬甸A玉鑲18K金鑽石翡翠荷葉吊墜佩戴展示": "Burmese Type A Jade 18K Gold Diamond Lotus Leaf Pendant Worn View",
+    "緬甸A玉鑲18K金鑽石翡翠荷葉吊墜背面": "Burmese Type A Jade 18K Gold Diamond Lotus Leaf Pendant Back",
+    "荷葉造型配18K金與鑽石鑲嵌，翠色飽滿，銀色鑲邊令輪廓更突出。": "A richly coloured lotus leaf jade pendant set with 18K gold and diamonds, with a bright metal border defining its outline.",
+    "佩戴展示": "Worn View",
+    "返回翡翠吊墜": "Back to Jade Pendants",
     "緬甸A玉鑲18K金加鑽石": "Burmese Type A Jade Pendant with 18K Gold and Diamonds",
     "緬甸A玉鑲18K金加鑽石 22.6mm 款詳情": "Burmese Type A Jade Pendant with 18K Gold and Diamonds, 22.6mm Details",
     "緬甸A玉鑲18K金加鑽石 22.6mm 款正面佩戴展示": "Burmese Type A Jade Pendant with 18K Gold and Diamonds, 22.6mm Front Worn View",
