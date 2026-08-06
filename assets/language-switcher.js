@@ -28,6 +28,7 @@
     "緬甸A玉平安瓜鑲18K正面": "Burmese Type A Jade Peace Melon Pendant with 18K Gold Front",
     "緬甸A玉平安瓜鑲18K背面": "Burmese Type A Jade Peace Melon Pendant with 18K Gold Back",
     "平安瓜": "Peace Melon",
+    "平安瓜造型翡翠配18K金鑲嵌，尺寸 42 x 16.7 x 10.9mm。": "A peace-melon-shaped jade pendant set in 18K gold. 42 x 16.7 x 10.9mm.",
     "平安瓜造型翡翠配18K金鑲嵌，尺寸約 40.4 x 15.8 x 6.2mm。": "A peace-melon-shaped jade pendant set in 18K gold. Approx. 40.4 x 15.8 x 6.2mm.",
     "平安瓜造型翡翠配18K金鑲嵌，適合佩戴或收藏。": "A peace-melon-shaped jade pendant set in 18K gold, suitable for wearing or collecting.",
     "緬甸A玉荷包脹鑲18K加鑽": "Burmese Type A Jade Full Pouch Pendant with 18K Gold and Diamonds",
