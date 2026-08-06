@@ -188,6 +188,12 @@
     "翡翠戒指系列": "Jade Ring Collection",
 
     "緬甸A玉鑲18K金鑽石翡翠吊墜": "Burmese Type A Jade 18K Gold Diamond Pendant",
+    "緬甸A玉鑲18K加鑽": "Burmese Type A White Jade Pendant with 18K Gold and Diamonds",
+    "查看緬甸A玉鑲18K加鑽詳情": "View Burmese Type A White Jade Pendant with 18K Gold and Diamonds Details",
+    "緬甸A玉鑲18K加鑽正面": "Burmese Type A White Jade Pendant with 18K Gold and Diamonds Front",
+    "緬甸A玉鑲18K加鑽背面": "Burmese Type A White Jade Pendant with 18K Gold and Diamonds Back",
+    "白色翡翠吊墜配18K金及鑽石鑲嵌，尺寸約 36.6 x 21.8 x 10mm。": "A white jade pendant set in 18K gold and diamonds. Approx. 36.6 x 21.8 x 10mm.",
+    "白色翡翠吊墜配18K金及鑽石鑲嵌，適合佩戴或收藏。": "A white jade pendant set in 18K gold and diamonds, suitable for wearing or collecting.",
     "緬甸A玉鑲18K金鑽石翡翠荷葉吊墜": "Burmese Type A Jade 18K Gold Diamond Lotus Leaf Pendant",
     "緬甸A玉鑲18K金鑽石翡翠荷葉吊墜正面": "Burmese Type A Jade 18K Gold Diamond Lotus Leaf Pendant Front",
     "緬甸A玉鑲18K金鑽石翡翠荷葉吊墜佩戴展示": "Burmese Type A Jade 18K Gold Diamond Lotus Leaf Pendant Worn View",
