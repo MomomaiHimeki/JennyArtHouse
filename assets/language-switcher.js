@@ -942,7 +942,8 @@
   };
 
   function normalizedPage() {
-    return (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    return page.includes(".") ? page : `${page}.html`;
   }
 
   function setText(selector, value, root = document) {
