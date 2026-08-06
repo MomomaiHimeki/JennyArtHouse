@@ -49,6 +49,7 @@
     "緬甸A玉佛公鑲18K加鑽正面": "Burmese Type A Jade Buddha with 18K Gold and Diamonds Front",
     "緬甸A玉佛公鑲18K加鑽背面": "Burmese Type A Jade Buddha with 18K Gold and Diamonds Back",
     "佛公翡翠配18K金及鑽石鑲嵌，尺寸約 23.3 x 26 x 7.1mm。": "A jade Buddha pendant set in 18K gold and diamonds. Approx. 23.3 x 26 x 7.1mm.",
+    "佛公翡翠配18K金及鑽石鑲嵌，尺寸約 31.8 x 26.3 x 9.6mm。": "A jade Buddha pendant set in 18K gold and diamonds. Approx. 31.8 x 26.3 x 9.6mm.",
     "佛公翡翠配18K金及鑽石鑲嵌，適合佩戴或收藏。": "A jade Buddha pendant set in 18K gold and diamonds, suitable for wearing or collecting.",
     "佛公／翡翠吊墜": "Jade Buddha / Jade Pendant",
     "緬甸A玉梅開五福正面": "Burmese Type A Jade Plum Blossoms and Five Blessings Plaque Front",
