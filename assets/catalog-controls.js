@@ -212,5 +212,12 @@
     }
   });
 
+  const languageObserver = new MutationObserver(refreshText);
+  languageObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["lang"]
+  });
+
   refreshText();
+  window.setTimeout(refreshText, 0);
 })();
