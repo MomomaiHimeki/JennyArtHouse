@@ -984,6 +984,48 @@
       object-position: center 58%;
     }
 
+    .gallery-visual.lulutong-entry img {
+      object-position: center 44%;
+    }
+
+    .porcelain-grid .gallery-visual {
+      isolation: isolate;
+      overflow: hidden;
+      background: #18120e;
+    }
+
+    .porcelain-grid .gallery-visual::before {
+      content: "";
+      position: absolute;
+      inset: -18px;
+      z-index: 0;
+      background-position: center;
+      background-size: cover;
+      filter: blur(12px);
+      opacity: .48;
+      transform: scale(1.08);
+    }
+
+    .porcelain-grid .porcelain-vase-entry::before {
+      background-image: url("assets/blue-white-porcelain-vase.webp");
+    }
+
+    .porcelain-grid .porcelain-tea-entry::before {
+      background-image: url("assets/floral-porcelain-tea-set.webp");
+    }
+
+    .porcelain-grid .porcelain-figure-entry::before {
+      background-image: url("assets/porcelain-figure-blue.webp");
+    }
+
+    .porcelain-grid .gallery-visual img {
+      position: relative;
+      z-index: 1;
+      object-fit: contain;
+      object-position: center;
+      filter: drop-shadow(0 16px 28px rgba(0, 0, 0, .24));
+    }
+
     .gallery-visual.buddha-entry img {
       object-fit: contain;
       object-position: center center;
@@ -1017,9 +1059,36 @@
     }
 
     @media (min-width: 760px) {
+      .gallery.porcelain-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery.porcelain-grid .gallery-card,
+      .gallery.porcelain-grid .gallery-card:first-child,
       .gallery.porcelain-grid .gallery-card:last-child {
-        grid-column: span 3;
-        min-height: 440px;
+        grid-column: span 1;
+        min-height: 420px;
+      }
+
+      .gallery.porcelain-grid .gallery-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc((100% - 14px) / 2);
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .gallery.porcelain-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gallery.porcelain-grid .gallery-card,
+      .gallery.porcelain-grid .gallery-card:first-child,
+      .gallery.porcelain-grid .gallery-card:last-child {
+        grid-column: span 1;
+        justify-self: stretch;
+        width: auto;
+        min-height: 420px;
       }
     }
 
@@ -1590,7 +1659,7 @@
             </div>
           </article>
           <article class="gallery-card">
-            <a class="gallery-visual" href="jade-lulutong.html" aria-label="瀏覽路路通玉器系列"><img src="assets/jade-lulutong-category-cover.jpg" alt="緬甸A玉路路通鑲18K系列封面" loading="lazy"></a>
+            <a class="gallery-visual lulutong-entry" href="jade-lulutong.html" aria-label="瀏覽路路通玉器系列"><img src="assets/jade-lulutong-18k-8800-front.webp" alt="緬甸A玉路路通鑲18K系列封面" loading="lazy"></a>
             <div class="gallery-copy">
               <h3>路路通</h3>
               <p>路路通造型簡潔，配鏈佩戴俐落，亦適合收藏。</p>
@@ -1626,7 +1695,7 @@
         </div>
         <div class="gallery porcelain-grid">
           <article class="gallery-card tall">
-            <a class="gallery-visual" href="blue-white-porcelain.html" aria-label="瀏覽青花瓷器系列"><img src="assets/blue-white-porcelain-vase.webp" alt="青花花鳥瓷瓶" loading="lazy"></a>
+            <a class="gallery-visual porcelain-vase-entry" href="blue-white-porcelain.html" aria-label="瀏覽青花瓷器系列"><img src="assets/blue-white-porcelain-vase.webp" alt="青花花鳥瓷瓶" loading="lazy"></a>
             <div class="gallery-copy">
               <h3>青花瓷器</h3>
               <p>花鳥筆意清雅，適合客廳、玄關與書房陳設。</p>
@@ -1634,7 +1703,7 @@
             </div>
           </article>
           <article class="gallery-card tall">
-            <div class="gallery-visual"><img src="assets/floral-porcelain-tea-set.webp" alt="百花彩瓷茶具套裝" loading="lazy"></div>
+            <div class="gallery-visual porcelain-tea-entry"><img src="assets/floral-porcelain-tea-set.webp" alt="百花彩瓷茶具套裝" loading="lazy"></div>
             <div class="gallery-copy">
               <h3>茶具與餐瓷</h3>
               <p>色彩豐富，可自用、送禮或配成完整套裝。</p>
@@ -1642,7 +1711,7 @@
             </div>
           </article>
           <article class="gallery-card figure-card">
-            <a class="gallery-visual" href="porcelain-figures.html" aria-label="瀏覽人物瓷像系列"><img src="assets/porcelain-figure-blue.webp" alt="藍袍傳統人物瓷像" loading="lazy"></a>
+            <a class="gallery-visual porcelain-figure-entry" href="porcelain-figures.html" aria-label="瀏覽人物瓷像系列"><img src="assets/porcelain-figure-blue.webp" alt="藍袍傳統人物瓷像" loading="lazy"></a>
             <div class="gallery-copy">
               <h3>人物瓷像</h3>
               <p>從衣紋、釉色到神態，展現傳統人物瓷塑之美。</p>
