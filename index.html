@@ -1382,6 +1382,23 @@
       background: #050403;
     }
 
+    /* These portrait originals include generous scenery around the jewellery.
+       Lock them to the card and crop in slightly so both tiles read as full. */
+    .jade-grid .gallery-visual.buddha-entry,
+    .jade-grid .gallery-visual.peace-entry {
+      overflow: hidden;
+      background: #050403;
+    }
+
+    .jade-grid .gallery-visual.buddha-entry img,
+    .jade-grid .gallery-visual.peace-entry img {
+      position: absolute;
+      inset: -8%;
+      width: 116%;
+      height: 116%;
+      max-width: none;
+    }
+
     .jade-grid .gallery-visual.buddha-entry img {
       object-position: center 46%;
     }
