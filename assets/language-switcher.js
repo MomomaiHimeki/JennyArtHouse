@@ -454,7 +454,16 @@
     "緬甸A玉路路通鑲18K": "Burmese Type A Jade Lulutong with 18K Gold",
     "緬甸A玉路路通鑲18K正面佩戴展示": "Burmese Type A Jade Lulutong with 18K Gold Front Worn View",
     "緬甸A玉路路通鑲18K背面佩戴展示": "Burmese Type A Jade Lulutong with 18K Gold Back Worn View",
+    "緬甸A玉路路通鑲18K系列封面": "Burmese Type A Jade Lulutong with 18K Gold Collection Cover",
     "路路通": "Lulutong",
+    "路路通系列": "Lulutong Collection",
+    "路路通玉器。": "Lulutong Jade Pieces.",
+    "路路通／翡翠吊墜": "Lulutong / Jade Pendant",
+    "返回路路通": "Back to Lulutong",
+    "查詢路路通玉器": "Enquire About Lulutong Jade",
+    "瀏覽路路通系列": "Browse Lulutong Collection",
+    "瀏覽路路通玉器系列": "Browse Lulutong Jade Collection",
+    "路路通造型簡潔，配鏈佩戴俐落，亦適合收藏。": "Lulutong pieces have a clean form for wearing on a chain or collecting.",
     "18K金": "18K Gold",
     "路路通配18K金鑲嵌，造型簡潔，尺寸 11.5 x 14.8mm。": "A cleanly styled Lulutong pendant with an 18K gold setting. 11.5 x 14.8mm.",
     "路路通配18K金鑲嵌，造型簡潔，適合佩戴或收藏。": "A cleanly styled Lulutong pendant with an 18K gold setting, suitable for wearing or collecting.",
@@ -805,6 +814,7 @@
     ["jade-buddha.html", "佛公", "Jade Buddha"],
     ["jade-buddha-guanyin.html", "觀音", "Guanyin"],
     ["jade-peace-buckle.html", "平安扣", "Peace Buckles"],
+    ["jade-lulutong.html", "路路通", "Lulutong"],
     ["jade-pendants.html", "雕刻玉牌", "Carved Jade Plaques"],
     ["blue-white-porcelain.html", "青花瓷器", "Blue & White Porcelain"],
     ["porcelain-figures.html", "人物瓷像", "Porcelain Figures"],
@@ -923,6 +933,24 @@
         lede: "Peace buckles symbolise harmony and safety, suitable for daily wear, collecting or gifting. Stock, measurements and prices can be confirmed by WhatsApp.",
         sectionEyebrow: "Available Styles",
         sectionTitle: "Peace Buckle Pieces.",
+        note: "This page shows styles only. Actual stock, measurements and prices are confirmed by WhatsApp."
+      }
+    },
+    "jade-lulutong.html": {
+      zh: {
+        eyebrow: "Lulutong Collection",
+        title: "路路通",
+        lede: "路路通造型簡潔，可配鏈佩戴或收藏。每件款式均可 WhatsApp 查詢現貨、尺寸及價錢。",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "路路通玉器。",
+        note: "網站只作款式展示，實際貨況、尺寸及價錢以 WhatsApp 回覆為準。"
+      },
+      en: {
+        eyebrow: "Lulutong Collection",
+        title: "Lulutong",
+        lede: "Lulutong pieces have a clean form for wearing on a chain or collecting. Stock, measurements and prices can be confirmed by WhatsApp.",
+        sectionEyebrow: "Available Styles",
+        sectionTitle: "Lulutong Jade Pieces.",
         note: "This page shows styles only. Actual stock, measurements and prices are confirmed by WhatsApp."
       }
     },
