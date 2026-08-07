@@ -187,6 +187,12 @@
     "翡翠吊墜系列": "Jade Pendant Collection",
     "翡翠戒指系列": "Jade Ring Collection",
 
+    "緬甸A玉吊咀鑲18K加鑽": "Burmese Type A White-and-Green Jade Pendant with 18K Gold and Diamonds",
+    "查看緬甸A玉吊咀鑲18K加鑽詳情": "View Burmese Type A White-and-Green Jade Pendant with 18K Gold and Diamonds Details",
+    "緬甸A玉吊咀鑲18K加鑽正面": "Burmese Type A White-and-Green Jade Pendant with 18K Gold and Diamonds Front",
+    "緬甸A玉吊咀鑲18K加鑽背面": "Burmese Type A White-and-Green Jade Pendant with 18K Gold and Diamonds Back",
+    "白綠相映的水滴形翡翠吊咀，配18K金及鑽石鑲扣，尺寸約 35.6 x 16.7 x 6.3mm。": "A white-and-green teardrop jade pendant with an 18K gold and diamond-set bail. Approx. 35.6 x 16.7 x 6.3mm.",
+    "白綠相映的水滴形翡翠吊咀，配18K金及鑽石鑲扣，適合佩戴或收藏。": "A white-and-green teardrop jade pendant with an 18K gold and diamond-set bail, suitable for wearing or collecting.",
     "緬甸A玉壽桃鑲18K": "Burmese Type A Jade Longevity Peach Pendant with 18K Gold",
     "查看緬甸A玉壽桃鑲18K詳情": "View Burmese Type A Jade Longevity Peach Pendant with 18K Gold Details",
     "緬甸A玉壽桃鑲18K正面": "Burmese Type A Jade Longevity Peach Pendant with 18K Gold Front",
