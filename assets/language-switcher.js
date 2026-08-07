@@ -187,6 +187,13 @@
     "翡翠吊墜系列": "Jade Pendant Collection",
     "翡翠戒指系列": "Jade Ring Collection",
 
+    "緬甸A玉白菜發財": "Burmese Type A Jade Prosperity Cabbage",
+    "查看緬甸A玉白菜發財詳情": "View Burmese Type A Jade Prosperity Cabbage Details",
+    "緬甸A玉白菜發財正面": "Burmese Type A Jade Prosperity Cabbage Front",
+    "緬甸A玉白菜發財背面": "Burmese Type A Jade Prosperity Cabbage Back",
+    "白菜發財": "Prosperity Cabbage",
+    "白菜造型翡翠雕刻件，白綠相映，寓意白菜發財，尺寸約 30.4 x 20.4 x 9.6mm。": "A white-and-green carved jade cabbage symbolising prosperity. Approx. 30.4 x 20.4 x 9.6mm.",
+    "白菜造型翡翠雕刻件，白綠相映，寓意白菜發財，適合佩戴或收藏。": "A white-and-green carved jade cabbage symbolising prosperity, suitable for wearing or collecting.",
     "緬甸A玉蟹鉗有錢鑲18K加鑽": "Burmese Type A Jade Crab Claw and Coin Pendant with 18K Gold and Diamonds",
     "查看緬甸A玉蟹鉗有錢鑲18K加鑽詳情": "View Burmese Type A Jade Crab Claw and Coin Pendant with 18K Gold and Diamonds Details",
     "緬甸A玉蟹鉗有錢鑲18K加鑽正面": "Burmese Type A Jade Crab Claw and Coin Pendant with 18K Gold and Diamonds Front",
