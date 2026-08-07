@@ -1353,12 +1353,10 @@
 
     @media (min-width: 1100px) {
       .gallery.jade-grid {
-        grid-template-columns: repeat(8, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
       }
 
       .jade-grid .gallery-card,
-      .jade-grid .gallery-card:first-child,
-      .jade-grid .gallery-card:nth-child(2),
       .jade-grid .gallery-card.carved-card {
         grid-column: span 2;
         justify-self: stretch;
@@ -1366,16 +1364,18 @@
         min-height: 330px;
       }
 
-      .jade-grid .gallery-card:nth-child(5) {
-        grid-column: 2 / span 2;
+      .jade-grid .gallery-card:first-child,
+      .jade-grid .gallery-card:nth-child(2) {
+        grid-column: span 3;
+        min-height: 420px;
       }
 
       .jade-grid .gallery-card:nth-child(6) {
-        grid-column: 4 / span 2;
+        grid-column: 2 / span 2;
       }
 
       .jade-grid .gallery-card:nth-child(7) {
-        grid-column: 6 / span 2;
+        grid-column: 4 / span 2;
       }
     }
 </style>
