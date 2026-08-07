@@ -187,6 +187,13 @@
     "翡翠吊墜系列": "Jade Pendant Collection",
     "翡翠戒指系列": "Jade Ring Collection",
 
+    "緬甸A玉積善得福扇": "Burmese Type A Jade Virtue and Fortune Fan",
+    "查看緬甸A玉積善得福扇詳情": "View Burmese Type A Jade Virtue and Fortune Fan Details",
+    "緬甸A玉積善得福扇正面": "Burmese Type A Jade Virtue and Fortune Fan Front",
+    "緬甸A玉積善得福扇背面": "Burmese Type A Jade Virtue and Fortune Fan Back",
+    "積善得福扇": "Virtue and Fortune Fan",
+    "扇形翡翠雕刻件，線條開展，寓意積善得福，尺寸約 27.8 x 39.8 x 2.1mm。": "A fan-shaped carved jade piece with radiating lines, symbolising virtue and good fortune. Approx. 27.8 x 39.8 x 2.1mm.",
+    "扇形翡翠雕刻件線條開展，寓意積善得福，適合佩戴或收藏。": "A fan-shaped carved jade piece with radiating lines, symbolising virtue and good fortune, suitable for wearing or collecting.",
     "緬甸A玉鑲18K金鑽石翡翠吊墜": "Burmese Type A Jade 18K Gold Diamond Pendant",
     "緬甸A玉鑲18K加鑽": "Burmese Type A White Jade Pendant with 18K Gold and Diamonds",
     "查看緬甸A玉鑲18K加鑽詳情": "View Burmese Type A White Jade Pendant with 18K Gold and Diamonds Details",
