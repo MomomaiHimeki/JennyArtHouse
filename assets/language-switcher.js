@@ -187,6 +187,13 @@
     "翡翠吊墜系列": "Jade Pendant Collection",
     "翡翠戒指系列": "Jade Ring Collection",
 
+    "緬甸A玉蟹鉗有錢鑲18K加鑽": "Burmese Type A Jade Crab Claw and Coin Pendant with 18K Gold and Diamonds",
+    "查看緬甸A玉蟹鉗有錢鑲18K加鑽詳情": "View Burmese Type A Jade Crab Claw and Coin Pendant with 18K Gold and Diamonds Details",
+    "緬甸A玉蟹鉗有錢鑲18K加鑽正面": "Burmese Type A Jade Crab Claw and Coin Pendant with 18K Gold and Diamonds Front",
+    "緬甸A玉蟹鉗有錢鑲18K加鑽背面": "Burmese Type A Jade Crab Claw and Coin Pendant with 18K Gold and Diamonds Back",
+    "蟹鉗有錢吊墜": "Crab Claw and Coin Pendant",
+    "蟹鉗與錢幣題材翡翠吊墜，配18K金及鑽石鑲扣，尺寸約 23.1 x 15.4 x 7.9mm。": "A crab claw and coin-themed jade pendant with an 18K gold and diamond-set bail. Approx. 23.1 x 15.4 x 7.9mm.",
+    "蟹鉗與錢幣題材翡翠吊墜，配18K金及鑽石鑲扣，適合佩戴或收藏。": "A crab claw and coin-themed jade pendant with an 18K gold and diamond-set bail, suitable for wearing or collecting.",
     "緬甸A玉吊咀鑲18K加鑽": "Burmese Type A White-and-Green Jade Pendant with 18K Gold and Diamonds",
     "查看緬甸A玉吊咀鑲18K加鑽詳情": "View Burmese Type A White-and-Green Jade Pendant with 18K Gold and Diamonds Details",
     "緬甸A玉吊咀鑲18K加鑽正面": "Burmese Type A White-and-Green Jade Pendant with 18K Gold and Diamonds Front",
